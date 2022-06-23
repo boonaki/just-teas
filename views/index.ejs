@@ -13,11 +13,11 @@
         <ul class="teas">
             <% for(key in teainfo) {%>
                 <li class="tea">
-                    <img src="<%- JSON.stringify(teainfo[key].image) %>" alt="image">
+                    <img src="<%= teainfo[key].image %>" alt="image">
                     <!-- <span>Name: <%- JSON.stringify(teainfo.key) %></span> -->
-                    <span>Origin: <%- JSON.stringify(teainfo[key].Origin) %></span>
-                    <span>Caffeine Content Levels: <%- JSON.stringify(teainfo[key].Caffeine) %></span>
-                    <span>Color: <%- JSON.stringify(teainfo[key].Color) %></span>
+                    <span>Origin: <%= teainfo[key].Origin %></span>
+                    <span>Caffeine Content Levels: <%= teainfo[key].Caffeine %></span>
+                    <span>Color: <%= teainfo[key].Color %></span>
                 </li>
             <% } %>
         </ul>

@@ -17,6 +17,7 @@ app.get('/', (req,res) => {
     fetch(url)
         .then(res => res.json()) //parse response as json
         .then(data => {
+            console.log(data)
             res.render('index.ejs', { teainfo : data })
         })
         .catch(err => {
