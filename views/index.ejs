@@ -10,6 +10,15 @@
     </head>
     <body>
         <h1>Tea Database</h1>
-        
+        <ul class="teas">
+            <% for(var i = 0; i < teainfo.length; i++) {%>
+                <li class="tea">
+                    <img src="" alt="image">
+                    <span><%= teainfo[i].Origin %></span>
+                    <span><%= teainfo[i].Caffeine %></span>
+                    <span><%= teainfo[i].Color %></span>
+                </li>
+            <% } %>
+        </ul>
     </body>
 </html>
