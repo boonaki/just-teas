@@ -12,13 +12,15 @@
         <h1>Tea Database</h1>
         <ul class="teas">
             <% for(key in teainfo) {%>
-                <li class="tea">
-                    <img src="<%= teainfo[key].image %>" alt="image">
-                    <!-- <span>Name: <%- JSON.stringify(teainfo.key) %></span> -->
-                    <span>Origin: <%= teainfo[key].Origin %></span>
-                    <span>Caffeine Content Levels: <%= teainfo[key].Caffeine %></span>
-                    <span>Color: <%= teainfo[key].Color %></span>
-                </li>
+                <% if(key !== 'unknown') {%>
+                    <li class="tea">
+                        <img src="<%= teainfo[key].image %>" alt="image">
+                        <!-- <span>Name: <%= key %></span> -->
+                        <span>Origin: <%= teainfo[key].Origin %></span>
+                        <span>Caffeine Content Levels: <%= teainfo[key].Caffeine %></span>
+                        <span>Color: <%= teainfo[key].Color %></span>
+                    </li>
+                <% } %>
             <% } %>
         </ul>
     </body>
