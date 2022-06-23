@@ -15,10 +15,10 @@
                 <% if(key !== 'unknown') {%>
                     <li class="tea">
                         <img src="<%= teainfo[key].image %>" alt="image">
-                        <!-- <span>Name: <%= key %></span> -->
-                        <span>Origin: <%= teainfo[key].Origin %></span>
-                        <span>Caffeine Content Levels: <%= teainfo[key].Caffeine %></span>
-                        <span>Color: <%= teainfo[key].Color %></span>
+                        <span>Name: <%= teainfo[key].name %></span>
+                        <span>Origin: <%= teainfo[key].origin %></span>
+                        <span>Caffeine Content Levels: <%= teainfo[key].caffeine %></span>
+                        <span>Color: <%= teainfo[key].color %></span>
                     </li>
                 <% } %>
             <% } %>
