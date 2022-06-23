@@ -11,12 +11,13 @@
     <body>
         <h1>Tea Database</h1>
         <ul class="teas">
-            <% for(var i = 0; i < teainfo.length; i++) {%>
+            <% for(key in teainfo) {%>
                 <li class="tea">
-                    <img src="" alt="image">
-                    <span><%= teainfo[i].Origin %></span>
-                    <span><%= teainfo[i].Caffeine %></span>
-                    <span><%= teainfo[i].Color %></span>
+                    <img src="<%- JSON.stringify(teainfo[key].image) %>" alt="image">
+                    <!-- <span>Name: <%- JSON.stringify(teainfo.key) %></span> -->
+                    <span>Origin: <%- JSON.stringify(teainfo[key].Origin) %></span>
+                    <span>Caffeine Content Levels: <%- JSON.stringify(teainfo[key].Caffeine) %></span>
+                    <span>Color: <%- JSON.stringify(teainfo[key].Color) %></span>
                 </li>
             <% } %>
         </ul>
