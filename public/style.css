@@ -1,4 +1,9 @@
-body{
+html{
+    font-family: 'Quicksand', 'sans-serif';
+    font-size: 62.5%;
+}
+
+#body{
     padding: 0 5%;
 }
 
@@ -6,7 +11,7 @@ body{
     cursor: pointer;
 }
 
-#teaTypes a{
+#body a{
     text-decoration: none;
     color: black;
     height: 100%;
@@ -14,6 +19,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2.0rem;
 }
 
 #typesHeader{
@@ -25,6 +31,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2.2rem;
 }
 
 #teaTypes{
@@ -35,21 +42,26 @@ body{
     align-items: center;
     height: 600px;
 }
-#teaTypes > div{
-    height: 75%;
-    width: 20%;
+
+.buttonDiv{
     display: flex;
     justify-content: center;
     align-items: center;
     background: grey;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: all .15s linear;
+}
+#teaTypes > div{
+    height: 75%;
+    width: 20%;
+}
+.buttonDiv:hover{
+    transform: translateY(-6px);
 }
 
 #blends{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 90%;
     height: 200px;
     margin: 0 5% 30px 5%;
-    background: gray;
 }
