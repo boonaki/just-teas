@@ -1,0 +1,5 @@
+// let black = document.querySelector('#black')
+// let green = document.querySelector('#green')
+// let wulong = document.querySelector('#wulong')
+// let white = document.querySelector('#white')
+// let blends = document.querySelector('#blends')
