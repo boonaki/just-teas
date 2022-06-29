@@ -67,6 +67,19 @@ app.get('/white', (req,res) => {
         })
 })
 
+app.get('/blends', (req,res) => {
+    const urlBlends = 'https://tea-api-boonaki.herokuapp.com/api/teas/blends'
+    fetch(urlBlends)
+        .then(res => res.json()) //parse response as json
+        .then(data => {
+            console.log(data)
+            res.render('index.ejs', { teainfo : data })
+        })
+        .catch(err => {
+            console.error(err)
+        })
+})
+
 // app.get('/', (req,res) => {
 //     // res.sendFile(__dirname + '/index.html')
 //     const url = 'https://tea-api-boonaki.herokuapp.com/api/teas'
