@@ -17,7 +17,7 @@ document.querySelector('#buttonBack').addEventListener('click', _ => {
     newPrev.classList.remove('hidden')
 
     next.classList.remove('next') //removes next styling
-    next.classList.add('hidden') //add current styling
+    next.classList.add('hidden') 
 
     curr.classList.add('next')
     curr.classList.remove('current')
@@ -26,14 +26,22 @@ document.querySelector('#buttonBack').addEventListener('click', _ => {
     prev.classList.add('current')
     teaCount--
 })
+
 document.querySelector('#buttonNext').addEventListener('click', _ => {
     let curr = teaConts[teaCount % teaConts.length]
     let next = teaConts[(teaCount+1) % teaConts.length]
     let newNext = teaConts[(teaCount + 2) % teaConts.length]
     let prev = teaConts[(teaCount-1) % teaConts.length]
-
-    newNext.classList.add('next')
+    //click next, remove hidden from new next
+    //give class that moves it
+    //
     newNext.classList.remove('hidden')
+    newNext.classList.add('newNext')
+    setTimeout(() => {
+        newNext.classList.remove('newNext')
+        newNext.classList.add('next')
+    })
+    
 
     next.classList.remove('next') //removes next styling
     next.classList.add('current') //add current styling
@@ -41,8 +49,14 @@ document.querySelector('#buttonNext').addEventListener('click', _ => {
     curr.classList.add('prev')
     curr.classList.remove('current')
 
+    
     prev.classList.remove('prev')
-    prev.classList.add('hidden')
+    prev.classList.add('oldPrev')
+    setTimeout(() => {
+        prev.classList.remove('oldPrev')
+        prev.classList.add('hidden')
+    }, 1000)
+    
     teaCount++
 })
 

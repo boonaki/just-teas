@@ -103,19 +103,52 @@ html{
     background: grey;
 }
 
+.newNext{
+    transform: translate3d(150%,2%,0px);
+    transition: transform 1s linear;
+}   
+.newNext::after{
+    transform: translate3d(75%,2%,0px);
+}
+
 .next{
     transform: translate3d(75%,2%,0px);
     z-index: 0;
-    
+    transition: transform 1s linear;
+}
+.next::before{
+    transform: translate3d(175%,2%,0px);
+}
+
+
+.oldPrev{
+    transform: translate3d(-175%,2%,0px);
+    transition: transform 1s linear;
+}
+.oldPrev::before{
+    transform: translate3d(-75%,2%,0px);
 }
 
 .prev{
     transform: translate3d(-75%, 2%, 0px);
+    transition: transform 1s linear;
+}
+
+.current::before{
+    transform: translate3d(-75%,2%,0px);
+    
+}
+
+.current::after{
+    transform: translate3d(75%,2%,0px);
+    
 }
 
 .current{
     transform: translate3d(0, 0, 10px);
+    transform-style: preserve-3d;
     z-index: 2;
+    transition: transform 1s linear;
 }
 
 .teaContainer img{
