@@ -103,47 +103,69 @@ html{
     background: grey;
 }
 
-.newNext{
+/* .newNextMinus{
     transform: translate3d(150%,2%,0px);
     transition: transform 1s linear;
-}   
-.newNext::after{
-    transform: translate3d(75%,2%,0px);
 }
 
-.next{
+.newNextMinus::before{
     transform: translate3d(75%,2%,0px);
+} */
+
+/* newNext box before coming onto page*/
+.newNextPlus{
+    transform: translate3d(150%,2%,0px);
     z-index: 0;
     transition: transform 1s linear;
 }
-.next::before{
-    transform: translate3d(175%,2%,0px);
+.newNextPlus::before{
+    transform: translate3d(75%,2%,0px)
 }
 
+/* newNext box postion after on page */
+.newNextPlus::after{
+    transform: translate3d(75%,2%,0px);
+}
 
-.oldPrev{
-    transform: translate3d(-175%,2%,0px);
+/* og NEXT box positioning */
+.next{
+    transform: translate3d(75%,2%,0px);
+    z-index: 1;
     transition: transform 1s linear;
 }
-.oldPrev::before{
+
+/* oldPrev box after clicking button */
+.oldPrevPlus{
+    transform: translate3d(-150%,2%,0px);
+    transition: transform 1s linear;
+    z-index: 0;
+}
+
+/* positioning before moving */
+.oldPrevPlus::before{
     transform: translate3d(-75%,2%,0px);
 }
 
+/* og PREV box positioning */
 .prev{
     transform: translate3d(-75%, 2%, 0px);
     transition: transform 1s linear;
+    z-index: 1;
 }
 
+/* current positioning before */
 .current::before{
     transform: translate3d(-75%,2%,0px);
     
 }
 
+/* current positioning after */
 .current::after{
     transform: translate3d(75%,2%,0px);
     
 }
 
+/* og CURRENT box positioning */
 .current{
     transform: translate3d(0, 0, 10px);
     transform-style: preserve-3d;
@@ -161,6 +183,7 @@ html{
     bottom: 50%;
     cursor: pointer;
     color: white;
+    z-index: 5;
 }
 
 #buttonBack{
