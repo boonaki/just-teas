@@ -20,7 +20,7 @@ app.get('/black', (req,res) => {
     fetch(urlBlack)
         .then(res => res.json()) //parse response as json
         .then(data => {
-            console.log(data)
+            // console.log(data)
             res.render('index.ejs', { teainfo : data })
         })
         .catch(err => {
@@ -33,7 +33,6 @@ app.get('/green', (req,res) => {
     fetch(urlGreen)
         .then(res => res.json()) //parse response as json
         .then(data => {
-            console.log(data)
             res.render('index.ejs', { teainfo : data })
         })
         .catch(err => {
@@ -46,7 +45,6 @@ app.get('/oolong', (req,res) => {
     fetch(urlOolong)
         .then(res => res.json()) //parse response as json
         .then(data => {
-            console.log(data)
             res.render('index.ejs', { teainfo : data })
         })
         .catch(err => {
@@ -58,8 +56,7 @@ app.get('/white', (req,res) => {
     const urlWhite = 'https://tea-api-boonaki.herokuapp.com/api/teas/white'
     fetch(urlWhite)
         .then(res => res.json()) //parse response as json
-        .then(data => {
-            console.log(data)
+        .then(data => {           
             res.render('index.ejs', { teainfo : data })
         })
         .catch(err => {
@@ -72,7 +69,6 @@ app.get('/blends', (req,res) => {
     fetch(urlBlends)
         .then(res => res.json()) //parse response as json
         .then(data => {
-            console.log(data)
             res.render('index.ejs', { teainfo : data })
         })
         .catch(err => {

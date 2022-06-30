@@ -65,3 +65,78 @@ html{
     height: 200px;
     margin: 10px 5% 0 5%; */
 }
+
+/******************************************
+/* EJS
+/*******************************************/
+/* .tea{
+    display: flex;
+    flex-direction: row;
+    background: grey;
+    margin: 10px 0;
+    padding: 15px;
+}
+.tea img{
+    max-height: 300px;
+    max-width: 300px;
+}
+.tea div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+#teas{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.teaContainer{
+    list-style: none;
+    width: 60%;
+    height: 900px;
+    position: absolute;
+    display: flex;
+    border: 1px solid red;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: grey;
+}
+
+.next{
+    transform: translate3d(75%,2%,0px);
+    z-index: 0;
+    
+}
+
+.prev{
+    transform: translate3d(-75%, 2%, 0px);
+}
+
+.current{
+    transform: translate3d(0, 0, 10px);
+    z-index: 2;
+}
+
+.teaContainer img{
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#buttonBack, #buttonNext{
+    position: absolute;
+    bottom: 50%;
+    cursor: pointer;
+    color: white;
+}
+
+#buttonBack{
+    bottom: 50%;
+}
+#buttonNext{
+    right: 0;
+}
+
+.hidden{
+    display: none;
+}

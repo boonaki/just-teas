@@ -6,36 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/reset.css">
         <script type="text/javascript" src="/main.js" defer></script>
     </head>
     <body>
         <h1>Tea Database</h1>
-        <ul class="teas">
+        <ul id="teas">
             <% if(!teainfo.types){ %>
                 <% for(key in teainfo) {%>
                     <% if(key !== 'unknown') {%>
-                        <li class="tea">
+                        <li class="teaContainer">
                             <img src="<%= teainfo[key].image %>" alt="image">
-                            <span>Name: <%= teainfo[key].name %></span>
-                            <span>Origin: <%= teainfo[key].origin %></span>
-                            <span>Caffeine Content Levels: <%= teainfo[key].caffeine %></span>
-                            <span>Color: <%= teainfo[key].colorDescription %></span>
+                            <div>
+                                <span>Name: <%= teainfo[key].name %></span>
+                                <span>Origin: <%= teainfo[key].origin %></span>
+                                <span>Caffeine Content Levels: <%= teainfo[key].caffeine %></span>
+                                <span>Color: <%= teainfo[key].colorDescription %></span>
+                            </div>
                         </li>
                     <% } %>
                 <% } %>
             <% }else {%>
-                <% for(key in teainfo.types) {%>
-                    <% if(key !== 'unknown') {%>
-                        <li class="tea">
-                            <img src="<%= teainfo.types[key].image %>" alt="image">
-                            <span>Name: <%= teainfo.types[key].name %></span>
-                            <span>Origin: <%= teainfo.types[key].origin %></span>
-                            <span>Caffeine Content Levels: <%= teainfo.types[key].caffeine %></span>
-                            <span>Color: <%= teainfo.types[key].colorDescription %></span>
+                <% var typesArr = Object.keys(teainfo.types) %>
+                <% for(var i = 0; i < typesArr.length; i++) {%>
+                    <% if(typesArr[i] !== 'unknown') {%>
+                        <li class="teaContainer hidden container-<%=i%>">
+                            <img src="<%= teainfo.types[typesArr[i]].image %>" alt="image">
+                            <div>
+                                <span>Name: <%= teainfo.types[typesArr[i]].name %></span>
+                                <span>Origin: <%= teainfo.types[typesArr[i]].origin %></span>
+                                <span>Caffeine Content Levels: <%= teainfo.types[typesArr[i]].caffeine %></span>
+                                <span>Color: <%= teainfo.types[typesArr[i]].colorDescription %></span>
+                            </div>
                         </li>
                     <% } %>
                 <% } %>
             <% } %>
         </ul>
+        <span id="buttonBack">BACK</span>
+        <span id="buttonNext">NEXT</span>
     </body>
 </html>
