@@ -69,6 +69,10 @@ html{
 /******************************************
 /* EJS
 /*******************************************/
+#ejsBody{
+    overflow-x: hidden;
+}
+
 /* .tea{
     display: flex;
     flex-direction: row;
@@ -89,11 +93,12 @@ html{
     padding: 0;
     display: flex;
     justify-content: center;
+    margin-top: 100px;
 }
 .teaContainer{
     list-style: none;
-    width: 60%;
-    height: 900px;
+    width: 45%;
+    height: 700px;
     position: absolute;
     display: flex;
     border: 1px solid red;
@@ -116,7 +121,8 @@ html{
 .newNextPlus{
     transform: translate3d(150%,2%,0px);
     z-index: 0;
-    transition: transform 1s linear;
+    transition: transform .5s linear;
+    filter: blur(2px);
 }
 .newNextPlus::before{
     transform: translate3d(75%,2%,0px)
@@ -131,14 +137,16 @@ html{
 .next{
     transform: translate3d(75%,2%,0px);
     z-index: 1;
-    transition: transform 1s linear;
+    transition: transform .5s linear;
+    filter: blur(2px);
 }
 
 /* oldPrev box after clicking button */
 .oldPrevPlus{
     transform: translate3d(-150%,2%,0px);
-    transition: transform 1s linear;
+    transition: transform .5s linear;
     z-index: 0;
+    filter: blur(2px);
 }
 
 /* positioning before moving */
@@ -149,19 +157,21 @@ html{
 /* og PREV box positioning */
 .prev{
     transform: translate3d(-75%, 2%, 0px);
-    transition: transform 1s linear;
+    transition: transform .5s linear;
     z-index: 1;
+    filter: blur(2px);
 }
 
 /* current positioning before */
 .current::before{
     transform: translate3d(-75%,2%,0px);
-    
+    filter: blur(1px);
 }
 
 /* current positioning after */
 .current::after{
     transform: translate3d(75%,2%,0px);
+    filter: blur(1px);
     
 }
 
@@ -170,7 +180,7 @@ html{
     transform: translate3d(0, 0, 10px);
     transform-style: preserve-3d;
     z-index: 2;
-    transition: transform 1s linear;
+    transition: transform .5s linear, filter .5s linear;
 }
 
 .teaContainer img{

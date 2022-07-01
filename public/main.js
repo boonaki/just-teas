@@ -31,7 +31,7 @@ document.querySelector('#buttonBack').addEventListener('click', _ => {
     setTimeout(() => {
         next.classList.remove('newNextPlus')
         next.classList.add('hidden')
-    }, 1000) 
+    }, 500) 
 
     teaCount--
 })
@@ -63,7 +63,7 @@ document.querySelector('#buttonNext').addEventListener('click', _ => {
     setTimeout(() => {
         prev.classList.remove('oldPrevPlus')
         prev.classList.add('hidden')
-    }, 1000)
+    }, 500)
     
     teaCount++
 })
