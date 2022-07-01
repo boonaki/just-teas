@@ -60,11 +60,11 @@ html{
     transform: translateY(-6px);
 }
 
-#blends{
-    /* width: 90%;
+/* #blends{
+    width: 90%;
     height: 200px;
-    margin: 10px 5% 0 5%; */
-}
+    margin: 10px 5% 0 5%;
+} */
 
 /******************************************
 /* EJS
@@ -73,22 +73,6 @@ html{
     overflow-x: hidden;
 }
 
-/* .tea{
-    display: flex;
-    flex-direction: row;
-    background: grey;
-    margin: 10px 0;
-    padding: 15px;
-}
-.tea img{
-    max-height: 300px;
-    max-width: 300px;
-}
-.tea div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
 #teas{
     padding: 0;
     display: flex;
@@ -107,15 +91,6 @@ html{
     align-items: center;
     background: grey;
 }
-
-/* .newNextMinus{
-    transform: translate3d(150%,2%,0px);
-    transition: transform 1s linear;
-}
-
-.newNextMinus::before{
-    transform: translate3d(75%,2%,0px);
-} */
 
 /* newNext box before coming onto page*/
 .newNext{
