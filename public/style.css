@@ -101,7 +101,7 @@ html{
     height: 700px;
     position: absolute;
     display: flex;
-    border: 1px solid red;
+    border: 4px solid black;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -118,18 +118,18 @@ html{
 } */
 
 /* newNext box before coming onto page*/
-.newNextPlus{
+.newNext{
     transform: translate3d(150%,2%,0px);
     z-index: 0;
     transition: transform .5s linear;
     filter: blur(2px);
 }
-.newNextPlus::before{
+.newNext::before{
     transform: translate3d(75%,2%,0px)
 }
 
 /* newNext box postion after on page */
-.newNextPlus::after{
+.newNext::after{
     transform: translate3d(75%,2%,0px);
 }
 
@@ -142,7 +142,7 @@ html{
 }
 
 /* oldPrev box after clicking button */
-.oldPrevPlus{
+.oldPrev{
     transform: translate3d(-150%,2%,0px);
     transition: transform .5s linear;
     z-index: 0;
@@ -150,7 +150,7 @@ html{
 }
 
 /* positioning before moving */
-.oldPrevPlus::before{
+.oldPrev::before{
     transform: translate3d(-75%,2%,0px);
 }
 
