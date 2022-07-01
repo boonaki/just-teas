@@ -88,7 +88,7 @@ html{
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background: grey;
 }
@@ -98,7 +98,7 @@ html{
     transform: translate3d(150%,2%,0px);
     z-index: 0;
     transition: transform .5s linear;
-    filter: blur(2px);
+    filter: blur(4px);
 }
 .newNext::before{
     transform: translate3d(75%,2%,0px)
@@ -114,7 +114,7 @@ html{
     transform: translate3d(75%,2%,0px);
     z-index: 1;
     transition: transform .5s linear;
-    filter: blur(2px);
+    filter: blur(4px);
 }
 
 /* oldPrev box after clicking button */
@@ -122,7 +122,7 @@ html{
     transform: translate3d(-150%,2%,0px);
     transition: transform .5s linear;
     z-index: 0;
-    filter: blur(2px);
+    filter: blur(4px);
 }
 
 /* positioning before moving */
@@ -135,7 +135,7 @@ html{
     transform: translate3d(-75%, 2%, 0px);
     transition: transform .5s linear;
     z-index: 1;
-    filter: blur(2px);
+    filter: blur(4px);
 }
 
 /* current positioning before */
@@ -163,14 +163,44 @@ html{
 .teaContainer img{
     max-width: 400px;
     max-height: 400px;
+    border: 1px solid black;
 }
+
+.immediateInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 35px 0;
+}
+.teaContainer span{
+    font-size: 2.0rem;
+}
+.teaContainer .bold{
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+.teaContainer .name{
+    margin-bottom: 15px;
+    font-size: 3.0rem;
+}
+.names, .teaOrigin{
+    display: flex;
+    flex-direction: column;
+}
+.colorTaste{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15%;
+}
+
 
 #buttonBack, #buttonNext{
     position: absolute;
     bottom: 50%;
     cursor: pointer;
-    color: white;
     z-index: 5;
+    font-size: 3.0rem;
 }
 
 #buttonBack{
