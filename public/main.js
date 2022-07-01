@@ -5,14 +5,28 @@
 // let blends = document.querySelector('#blends')
 
 
-let teaCount = 1000
+let count = 1000
 
-let teaConts = document.getElementsByClassName('teaContainer')
+let teaContainers = document.getElementsByClassName('teaContainer')
+
+//RANDOM BACKGROUND COLOR
+const bgColors = ['#f3caca' , '#c4e5d4', '#9fd0d5', '#bda259', '#cf895a']
+
+for(let i = 0; i < teaContainers.length; i++){
+    console.log(teaContainers[i], Math.random() * 5)
+    teaContainers[i].style.background = `${bgColors[Math.floor(Math.random() * 4)]}`
+}
+
+// teaContainers.forEach((container) => {
+//     container.style.background = `${bgColors[Math.random() * 5]}`
+// })
+
+// BACK BUTTON 
 document.querySelector('#buttonBack').addEventListener('click', _ => {
-    let curr = teaConts[teaCount % teaConts.length]
-    let next = teaConts[(teaCount+1) % teaConts.length]
-    let newPrev = teaConts[(teaCount - 2) % teaConts.length]
-    let prev = teaConts[(teaCount-1) % teaConts.length]
+    let curr = teaContainers[count % teaContainers.length]
+    let next = teaContainers[(count+1) % teaContainers.length]
+    let newPrev = teaContainers[(count - 2) % teaContainers.length]
+    let prev = teaContainers[(count-1) % teaContainers.length]
     newPrev.classList.remove('hidden')
     newPrev.classList.add('oldPrevPlus')
     setTimeout(() => {
@@ -33,14 +47,15 @@ document.querySelector('#buttonBack').addEventListener('click', _ => {
         next.classList.add('hidden')
     }, 500) 
 
-    teaCount--
+    count--
 })
 
+// NEXT BUTTON
 document.querySelector('#buttonNext').addEventListener('click', _ => {
-    let curr = teaConts[teaCount % teaConts.length]
-    let next = teaConts[(teaCount+1) % teaConts.length]
-    let newNext = teaConts[(teaCount + 2) % teaConts.length]
-    let prev = teaConts[(teaCount-1) % teaConts.length]
+    let curr = teaContainers[count % teaContainers.length]
+    let next = teaContainers[(count+1) % teaContainers.length]
+    let newNext = teaContainers[(count + 2) % teaContainers.length]
+    let prev = teaContainers[(count-1) % teaContainers.length]
     //click next, remove hidden from new next
     //give class that moves it
     //
@@ -65,27 +80,27 @@ document.querySelector('#buttonNext').addEventListener('click', _ => {
         prev.classList.add('hidden')
     }, 500)
     
-    teaCount++
+    count++
 })
 
 getCurrentSlide()
 getNextSlide()
 getPrevSlide()
 function getCurrentSlide(){
-    let current = teaConts[teaCount % teaConts.length]
+    let current = teaContainers[count % teaContainers.length]
     current.classList.remove('hidden')
     current.classList.add('current')
 }
 
 function getNextSlide(){
-    let next = teaConts[(teaCount + 1) % teaConts.length]
+    let next = teaContainers[(count + 1) % teaContainers.length]
     next.classList.remove('hidden')
     next.classList.add('next')  
     
 }
 
 function getPrevSlide(){
-    let prev = teaConts[(teaCount - 1) % teaConts.length]
+    let prev = teaContainers[(count - 1) % teaContainers.length]
     prev.classList.remove('hidden')
     prev.classList.add('prev') 
 }
