@@ -17,10 +17,6 @@ for(let i = 0; i < teaContainers.length; i++){
     teaContainers[i].style.background = `${bgColors[Math.floor(Math.random() * 4)]}`
 }
 
-// teaContainers.forEach((container) => {
-//     container.style.background = `${bgColors[Math.random() * 5]}`
-// })
-
 // BACK BUTTON 
 document.querySelector('#buttonBack').addEventListener('click', _ => {
     let curr = teaContainers[count % teaContainers.length]
@@ -83,6 +79,7 @@ document.querySelector('#buttonNext').addEventListener('click', _ => {
     count++
 })
 
+// ON PAGE LOAD, FIND SECS TO DISPLAY
 getCurrentSlide()
 getNextSlide()
 getPrevSlide()

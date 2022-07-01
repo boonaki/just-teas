@@ -31,9 +31,9 @@ html{
     font-size: 2.2rem;
     padding: 40px;
 }
-#typesHeader h2{
+/* #typesHeader h2{
     
-}
+} */
 #teaTypes{
     width: 100%;
     display: flex;
@@ -84,10 +84,11 @@ html{
     width: 45%;
     height: 700px;
     position: absolute;
+    border: 2px solid black;
+    border-radius: 15px;
     display: flex;
-    border: 4px solid black;
-    justify-content: center;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     background: grey;
 }
@@ -158,9 +159,10 @@ html{
     transition: transform .5s linear, filter .5s linear;
 }
 
+/* IMAGE */
 .teaContainer img{
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 #buttonBack, #buttonNext{
