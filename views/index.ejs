@@ -13,7 +13,10 @@
         <script type="text/javascript" src="/main.js" defer></script>
     </head>
     <body id="ejsBody">
-        <h1>Tea Database</h1>
+        <header id="header">
+            <h1>Tea Database</h1>
+            <span><a href="/">return to menu</a></span>
+        </header>
         <ul id="teas">
             <% if(!teainfo.types){ %>
                 <% for(key in teainfo) {%>
@@ -71,5 +74,8 @@
         </ul>
         <span id="buttonBack">BACK</span>
         <span id="buttonNext">NEXT</span>
+        <footer id="footer">
+
+        </footer>
     </body>
 </html>
