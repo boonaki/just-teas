@@ -47,14 +47,15 @@
                     <% if(typesArr[i] !== 'unknown') {%>
                         <li id="container-<%=i%>" class="teaContainer hidden">
                             <span class="name bold"><%= teainfo.types[typesArr[i]].name %></span>
+                            <% if(teainfo.types[typesArr[i]].altnames !== '') {%>
+                                <span class="alt"><span class="bold">Alt: </span><%= teainfo.types[typesArr[i]].altnames %></span>
+                            <% }else { %>
+                                <span class="alt"><span class="bold">Alt: </span>none</span>
+                            <% } %>
                             <img src="<%= teainfo.types[typesArr[i]].image %>" alt="image">
                             <div class="immediateInfo">
                                 <div class="names">
-                                    <% if(teainfo.types[typesArr[i]].altnames !== '') {%>
-                                        <span><span class="bold">Alt: </span><%= teainfo.types[typesArr[i]].altnames %></span>
-                                    <% }else { %>
-                                        <span><span class="bold">Alt: </span>none</span>
-                                    <% } %>
+                                    
 
                                     <span><span class="bold">Type: </span><%= teainfo.types[typesArr[i]].type %></span>
                                 </div>

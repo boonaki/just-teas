@@ -201,9 +201,9 @@ html{
 
 .immediateInfo{
     width: 100%;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
     margin: 35px 0 0 0;
 }
 .teaContainer span{
@@ -214,7 +214,7 @@ html{
     font-size: 2.2rem;
 }
 .teaContainer .name{
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     font-size: 3.0rem;
 }
 .names, .teaOrigin{
@@ -223,9 +223,9 @@ html{
     align-items: center;
     text-align: center;
 }
-/* .alt{
-    width: 70%;
-} */
+.alt{
+    margin-bottom: 15px;
+}
 .colorTaste{
     display: flex;
     flex-direction: column;
