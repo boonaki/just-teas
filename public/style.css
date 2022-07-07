@@ -79,22 +79,32 @@ html{
 
 #header{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     position: absolute;
     top: 0;
     width: 100%;
+    height: 65px;
+    color: white;
+}
+#header h1{
+    margin-left: 30px;
 }
 #header span{
+    margin-right: 30px;
     font-size: 2.0rem;
 }
 #header span a{
     text-decoration: none;
     color: white;
+    padding: 5px 10px;
+}
+#header span a:hover{
+    border: 1px solid white;
 }
 
 
-#header, #footer{
+/* #header, #footer{
     height: 75px;
     color: white;
 }
@@ -103,7 +113,7 @@ html{
     width: 100%;
     position: absolute;
     bottom: 0;
-}
+} */
 
 
 #teas{
@@ -194,8 +204,9 @@ html{
 
 /* IMAGE */
 .teaContainer img{
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 350px;
+    max-height: 350px;
+    height: 350px;
     border: 1px solid black;
 }
 
