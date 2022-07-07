@@ -22,7 +22,23 @@
                 <% for(key in teainfo) {%>
                     <% if(key !== 'unknown') {%>
                         <li class="teaContainer">
+                            <span class="name bold"><%= teainfo[key].name %></span>
+                            <% if(teainfo[key].altnames !== '') {%>
+                                <span class="alt"><span class="bold">Alt: </span><%= teainfo[key].altnames %></span>
+                            <% }else { %>
+                                <span class="alt"><span class="bold">Alt: </span>none</span>
+                            <% } %>
                             <img src="<%= teainfo[key].image %>" alt="image">
+                            <div class="immediateInfo">
+                                <span><span class="bold">Type: </span><%= teainfo[key].type %></span>
+                                <span><span class="bold">Origin: </span><%= teainfo[key].origin %></span>
+                                <span><span class="bold">Caffeine Levels: </span><%= teainfo[key].caffeineLevel %></span>
+                            </div>
+                            <div class="colorTaste">
+                                <span><span class="bold">Color: </span><%= teainfo[key].colorDescription %></span>
+                                <span><span class="bold">Taste: </span><%= teainfo[key].tasteDescription %></span>
+                            </div>
+                            <!-- <img src="<%= teainfo[key].image %>" alt="image">
                             <div>
                                 <div>
                                     <span>Name: <%= teainfo[key].name %></span>
@@ -37,7 +53,7 @@
                             <div>
                                 <span>Color: <%= teainfo[key].colorDescription %></span>
                                 <span>Taste: <%= teainfo[key].tasteDescription %></span>
-                            </div>
+                            </div> -->
                         </li>
                     <% } %>
                 <% } %>
