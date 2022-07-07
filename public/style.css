@@ -199,12 +199,14 @@ html{
     border: 1px solid black;
 }
 
+/* TYPE / ORIGIN / CAFF. */
 .immediateInfo{
     width: 100%;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-evenly; */
     margin: 35px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 .teaContainer span{
     font-size: 2.0rem;
@@ -214,14 +216,7 @@ html{
     font-size: 2.2rem;
 }
 .teaContainer .name{
-    /* margin-bottom: 15px; */
     font-size: 3.0rem;
-}
-.names, .teaOrigin{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
 }
 .alt{
     margin-bottom: 15px;
