@@ -10,7 +10,8 @@ let count = 1000
 let teaContainers = document.getElementsByClassName('teaContainer')
 
 //RANDOM BACKGROUND COLOR
-const bgColors = ['#f3caca' , '#c4e5d4', '#9fd0d5', '#bda259', '#cf895a']
+//RED GREEN BLUE GOLD BROWNISH
+const bgColors = ['rgb(243 202 202 / 75%)' , 'rgb(196 229 212 / 75%)', 'rgb(159 208 213 / 75%)', 'rgb(189 162 89 / 75%)', 'rgb(186 117 71 / 75%)']
 
 for(let i = 0; i < teaContainers.length; i++){
     console.log(teaContainers[i], Math.random() * 5)
