@@ -105,14 +105,6 @@ html{
 /* EJS
 /*******************************************/
 
-/* #ejsBody, #htmlBody{
-    overflow-x: hidden;
-    background-image: url('imgs/bg.jpg');
-    background-size: 115%;
-    background-repeat: no-repeat;
-
-} */
-
 #header{
     display: flex;
     justify-content: space-between;
@@ -306,4 +298,23 @@ html{
 
 .hidden{
     display: none;
+}
+
+/******************************************
+/* RESPONSIVENESS
+/*******************************************/
+
+@media screen and (max-width: 880px){
+    #about{
+        padding: 15px 3%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #about{
+        height: 100%;
+    }
+    #about h1{
+        margin-bottom: 5px;
+    }
 }
