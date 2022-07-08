@@ -133,12 +133,15 @@ html{
     padding: 0;
     display: flex;
     justify-content: center;
-    margin-top: 45px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    align-items: center;
 }
 .teaContainer{
     list-style: none;
     width: 45%;
-    height: 700px;
+    height: 80%;
     position: absolute;
     border: 2px solid black;
     border-radius: 15px;
@@ -241,7 +244,7 @@ html{
 
 /* IMAGE */
 .teaContainer img{
-    max-width: 350px;
+    max-width: 300px;
     max-height: 350px;
     border: 1px solid black;
 }
@@ -249,7 +252,7 @@ html{
 /* TYPE / ORIGIN / CAFF. */
 .immediateInfo{
     width: 100%;
-    margin: 35px 0 0 0;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
