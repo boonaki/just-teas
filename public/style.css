@@ -12,6 +12,7 @@ html{
     position: fixed;
     top: 0;
     left: 0;
+    overflow-x: hidden;
 }
 
 /******************************************
@@ -247,7 +248,7 @@ html{
 
 /* IMAGE */
 .teaContainer img{
-    max-width: 300px;
+    max-width: 350px;
     max-height: 350px;
     border: 1px solid black;
 }
@@ -288,10 +289,6 @@ html{
     z-index: 5;
     font-size: 3.0rem;
 }
-
-#buttonBack{
-    bottom: 50%;
-}
 #buttonNext{
     right: 0;
 }
@@ -305,8 +302,17 @@ html{
 /*******************************************/
 
 @media screen and (max-width: 880px){
+    html{
+        font-size: 57.5%;
+    }
     #about{
         padding: 15px 3%;
+    }
+    .teaContainer{
+        width: 55%;
+    }
+    .teaContainer img{
+        max-width: 300px;
     }
 }
 
@@ -314,7 +320,25 @@ html{
     #about{
         height: 100%;
     }
+    .teaContainer{
+        width: 70%;
+        /* height: 75%; */
+    }
     #about h1{
         margin-bottom: 5px;
     }
+}
+
+@media screen and (max-width: 475px){
+    .teaContainer{
+        /* height: 70%; */
+    }
+    .teaContainer img{
+        max-width: 240px;
+    }
+    #buttonBack, #buttonNext{
+        bottom: 0;
+        margin: 5% 10%;
+        color: white;
+    }   
 }
