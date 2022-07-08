@@ -157,6 +157,7 @@ html{
     -webkit-transition: transform .5s linear, opacity .5s linear;
     -moz-transition: transform .5s linear, opacity .5s linear;
     -o-transition: transform .5s linear, opacity .5s linear;
+    will-change: transform;
     filter: blur(4px);
     opacity: 0;
 }
@@ -175,6 +176,8 @@ html{
     -webkit-transition: transform .5s linear;
     -moz-transition: transform .5s linear;
     -o-transition: transform .5s linear;
+    will-change: transform;
+    pointer-events: auto;
     filter: blur(4px);
     /* opacity: .5; */
 }
@@ -186,6 +189,7 @@ html{
     -webkit-transition: transform .5s linear, opacity .5s linear;
     -moz-transition: transform .5s linear, opacity .5s linear;
     -o-transition: transform .5s linear, opacity .5s linear;
+    will-change: transform;
     z-index: 0;
     filter: blur(4px);
     opacity: 0;
@@ -204,6 +208,8 @@ html{
     -webkit-transition: transform .5s linear;
     -moz-transition: transform .5s linear;
     -o-transition: transform .5s linear;
+    will-change: transform;
+    pointer-events: auto;
     z-index: 1;
     filter: blur(4px);
 }
@@ -232,6 +238,8 @@ html{
     -webkit-transition: transform .5s linear, filter .5s linear;
     -moz-transition: transform .5s linear, filter .5s linear;
     -o-transition: transform .5s linear, filter .5s linear;
+    will-change: transform;
+    pointer-events: auto;
 }
 
 /* IMAGE */
