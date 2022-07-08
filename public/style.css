@@ -7,21 +7,11 @@ html{
 /* HTML
 /*******************************************/
 
-/* #bodySec{
-    padding: 0 5%;
-    background: #b6dae5;
-    height: 100vh;
-} */
-#htmlBody{
-    
-}
-
 #about{
     box-sizing: border-box;
     width: 100%;
     height: 100px;
-    /* margin: 20px 10% 0 10%; */
-    background: #a65426;
+    background: #ac8a64;
     color: white;
     text-align: center;
     padding: 15px 18%;
@@ -57,10 +47,8 @@ html{
     padding: 15px;
     color: white;
     font-style: italic;
-    background: #bc924c;
+    background: #d0ab6f;
     margin-bottom: 20px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
 }
 
 #teaTypes{
@@ -74,7 +62,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #bc924c;
+    background: #d0ab6f;
     border-radius: 10px;
     border: 4px solid black;
     transition: background .15s linear;
@@ -89,7 +77,7 @@ html{
 }
 #htmlFoot{
     height: 60px;
-    background: #a65426;
+    background: #ac8a64;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -110,7 +98,7 @@ html{
 #ejsBody, #htmlBody{
     overflow-x: hidden;
     background-image: url('imgs/bg.jpg');
-    background-size: 110%;
+    background-size: 115%;
     background-repeat: no-repeat;
 
 }
@@ -141,19 +129,6 @@ html{
     border: 1px solid white;
 }
 
-
-/* #header, #footer{
-    height: 75px;
-    color: white;
-}
-
-#footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-} */
-
-
 #teas{
     padding: 0;
     display: flex;
@@ -178,16 +153,18 @@ html{
 .newNext{
     transform: translate3d(150%,2%,0px);
     z-index: 0;
-    transition: transform .5s linear;
+    transition: transform .5s linear, opacity .5s linear;
+    -webkit-transition: transform .5s linear, opacity .5s linear;
+    -moz-transition: transform .5s linear, opacity .5s linear;
+    -o-transition: transform .5s linear, opacity .5s linear;
     filter: blur(4px);
-}
-.newNext::before{
-    transform: translate3d(75%,2%,0px)
+    opacity: 0;
 }
 
 /* newNext box postion after on page */
 .newNext::after{
     transform: translate3d(75%,2%,0px);
+    opacity: .5;
 }
 
 /* og NEXT box positioning */
@@ -195,26 +172,38 @@ html{
     transform: translate3d(75%,2%,0px);
     z-index: 1;
     transition: transform .5s linear;
+    -webkit-transition: transform .5s linear;
+    -moz-transition: transform .5s linear;
+    -o-transition: transform .5s linear;
     filter: blur(4px);
+    /* opacity: .5; */
 }
 
 /* oldPrev box after clicking button */
 .oldPrev{
     transform: translate3d(-150%,2%,0px);
-    transition: transform .5s linear;
+    transition: transform .5s linear, opacity .5s linear;
+    -webkit-transition: transform .5s linear, opacity .5s linear;
+    -moz-transition: transform .5s linear, opacity .5s linear;
+    -o-transition: transform .5s linear, opacity .5s linear;
     z-index: 0;
     filter: blur(4px);
+    opacity: 0;
 }
 
 /* positioning before moving */
 .oldPrev::before{
     transform: translate3d(-75%,2%,0px);
+    opacity: .5;
 }
 
 /* og PREV box positioning */
 .prev{
     transform: translate3d(-75%, 2%, 0px);
     transition: transform .5s linear;
+    -webkit-transition: transform .5s linear;
+    -moz-transition: transform .5s linear;
+    -o-transition: transform .5s linear;
     z-index: 1;
     filter: blur(4px);
 }
@@ -223,13 +212,14 @@ html{
 .current::before{
     transform: translate3d(-75%,2%,0px);
     filter: blur(1px);
+    /* opacity: .8; */
 }
 
 /* current positioning after */
 .current::after{
     transform: translate3d(75%,2%,0px);
     filter: blur(1px);
-    
+    /* opacity: .8; */
 }
 
 /* og CURRENT box positioning */
@@ -237,7 +227,11 @@ html{
     transform: translate3d(0, 0, 10px);
     transform-style: preserve-3d;
     z-index: 2;
+    opacity: 1;
     transition: transform .5s linear, filter .5s linear;
+    -webkit-transition: transform .5s linear, filter .5s linear;
+    -moz-transition: transform .5s linear, filter .5s linear;
+    -o-transition: transform .5s linear, filter .5s linear;
 }
 
 /* IMAGE */
