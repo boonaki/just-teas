@@ -3,6 +3,13 @@ html{
     font-size: 62.5%;
 }
 
+#bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
 /******************************************
 /* HTML
 /*******************************************/
@@ -95,13 +102,13 @@ html{
 /* EJS
 /*******************************************/
 
-#ejsBody, #htmlBody{
+/* #ejsBody, #htmlBody{
     overflow-x: hidden;
     background-image: url('imgs/bg.jpg');
     background-size: 115%;
     background-repeat: no-repeat;
 
-}
+} */
 
 #header{
     display: flex;
