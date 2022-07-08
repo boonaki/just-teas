@@ -333,9 +333,9 @@ html{
 }
 
 @media screen and (max-width: 475px){
-    .teaContainer{
-        /* height: 70%; */
-    }
+    /* .teaContainer{
+        height: 70%;
+    } */
     .teaContainer img{
         max-width: 240px;
     }
