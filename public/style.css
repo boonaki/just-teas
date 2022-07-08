@@ -3,6 +3,10 @@ html{
     font-size: 62.5%;
 }
 
+/******************************************
+/* HTML
+/*******************************************/
+
 #bodySec{
     padding: 0 5%;
     background: #b6dae5;
@@ -59,12 +63,6 @@ html{
 .buttonDiv:hover{
     transform: translateY(-6px);
 }
-
-/* #blends{
-    width: 90%;
-    height: 200px;
-    margin: 10px 5% 0 5%;
-} */
 
 /******************************************
 /* EJS
