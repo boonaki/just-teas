@@ -4,10 +4,14 @@ html{
 }
 
 #bg{
-    position: absolute;
-    height: 100%;
-    width: 100%;
     z-index: -1;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 /******************************************
@@ -77,7 +81,7 @@ html{
 #teaTypes > div{
     height: 80px;
     width: 65%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .buttonDiv:hover{
     background: #89ab3a;
@@ -85,9 +89,8 @@ html{
 #htmlFoot{
     height: 60px;
     background: #ac8a64;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    width: 90%;
+    margin: 0 5%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
