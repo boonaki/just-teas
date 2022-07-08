@@ -7,17 +7,38 @@ html{
 /* HTML
 /*******************************************/
 
-#bodySec{
+/* #bodySec{
     padding: 0 5%;
     background: #b6dae5;
     height: 100vh;
+} */
+#htmlBody{
+    
+}
+
+#about{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    /* margin: 20px 10% 0 10%; */
+    background: #a65426;
+    color: white;
+    text-align: center;
+    padding: 15px 18%;
+}
+#about h1{
+    font-size: 2.5rem;
+}
+
+#about p{
+    font-size: 2.0rem;
 }
 
 .cursor{
     cursor: pointer;
 }
 
-#bodySec a{
+#teaTypes a{
     text-decoration: none;
     color: black;
     height: 100%;
@@ -32,42 +53,61 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.2rem;
-    padding: 40px;
+    font-size: 1.5rem;
+    padding: 15px;
+    color: white;
+    font-style: italic;
+    background: #bc924c;
+    margin-bottom: 20px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
-/* #typesHeader h2{
-    
-} */
+
 #teaTypes{
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    height: 25%;
 }
 
 .buttonDiv{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ccd9ae;
+    background: #bc924c;
     border-radius: 10px;
     border: 4px solid black;
-    transition: all .15s linear;
+    transition: background .15s linear;
 }
 #teaTypes > div{
-    height: 100%;
-    width: 17%;
+    height: 80px;
+    width: 65%;
+    margin-bottom: 15px;
 }
 .buttonDiv:hover{
-    transform: translateY(-6px);
+    background: #89ab3a;
+}
+#htmlFoot{
+    height: 60px;
+    background: #a65426;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#htmlFoot > a{
+    text-decoration: none;
+    color: white;
+    font-size: 2.2rem;
 }
 
 /******************************************
 /* EJS
 /*******************************************/
-#ejsBody{
+
+#ejsBody, #htmlBody{
     overflow-x: hidden;
     background-image: url('imgs/bg.jpg');
     background-size: 110%;
