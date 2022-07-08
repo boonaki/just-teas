@@ -12,7 +12,6 @@ html{
     position: fixed;
     top: 0;
     left: 0;
-    overflow-x: hidden;
 }
 
 /******************************************
@@ -105,6 +104,10 @@ html{
 /******************************************
 /* EJS
 /*******************************************/
+
+#ejsBody{
+    overflow-x: hidden;
+}
 
 #header{
     display: flex;
