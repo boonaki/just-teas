@@ -177,7 +177,6 @@ html{
     -moz-transition: transform .5s linear;
     -o-transition: transform .5s linear;
     will-change: transform;
-    pointer-events: auto;
     filter: blur(4px);
     /* opacity: .5; */
 }
@@ -209,7 +208,6 @@ html{
     -moz-transition: transform .5s linear;
     -o-transition: transform .5s linear;
     will-change: transform;
-    pointer-events: auto;
     z-index: 1;
     filter: blur(4px);
 }
@@ -239,7 +237,6 @@ html{
     -moz-transition: transform .5s linear, filter .5s linear;
     -o-transition: transform .5s linear, filter .5s linear;
     will-change: transform;
-    pointer-events: auto;
 }
 
 /* IMAGE */
