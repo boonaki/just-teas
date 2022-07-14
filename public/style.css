@@ -274,9 +274,11 @@ html{
 }
 .teaContainer .name{
     font-size: 3.0rem;
+    text-align: center;
 }
 .alt{
     margin-bottom: 15px;
+    text-align: center;
 }
 .colorTaste{
     display: flex;
@@ -333,9 +335,9 @@ html{
 }
 
 @media screen and (max-width: 475px){
-    /* .teaContainer{
-        height: 70%;
-    } */
+    .teaContainer{
+        width: 80%;
+    }
     .teaContainer img{
         max-width: 240px;
     }
