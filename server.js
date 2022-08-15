@@ -12,7 +12,15 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req,res) => {
-    res.sendFile(__dirname + '/index.html')
+    const url = 'https://tea-api-boonaki.herokuapp.com/api/teas'
+    fetch(url)
+        .then(res => res.json()) //parse response as json
+        .then(data => {
+            res.render('index.ejs', { teainfo : data })
+        })
+        .catch(err => {
+            console.error(err)
+        })
 })
 
 app.get('/black', (req,res) => {
@@ -21,7 +29,7 @@ app.get('/black', (req,res) => {
         .then(res => res.json()) //parse response as json
         .then(data => {
             // console.log(data)
-            res.render('index.ejs', { teainfo : data })
+            res.render('teas.ejs', { teainfo : data })
         })
         .catch(err => {
             console.error(err)
@@ -33,7 +41,7 @@ app.get('/green', (req,res) => {
     fetch(urlGreen)
         .then(res => res.json()) //parse response as json
         .then(data => {
-            res.render('index.ejs', { teainfo : data })
+            res.render('teas.ejs', { teainfo : data })
         })
         .catch(err => {
             console.error(err)
@@ -45,7 +53,7 @@ app.get('/oolong', (req,res) => {
     fetch(urlOolong)
         .then(res => res.json()) //parse response as json
         .then(data => {
-            res.render('index.ejs', { teainfo : data })
+            res.render('teas.ejs', { teainfo : data })
         })
         .catch(err => {
             console.error(err)
@@ -57,7 +65,7 @@ app.get('/white', (req,res) => {
     fetch(urlWhite)
         .then(res => res.json()) //parse response as json
         .then(data => {           
-            res.render('index.ejs', { teainfo : data })
+            res.render('teas.ejs', { teainfo : data })
         })
         .catch(err => {
             console.error(err)
@@ -69,26 +77,12 @@ app.get('/blends', (req,res) => {
     fetch(urlBlends)
         .then(res => res.json()) //parse response as json
         .then(data => {
-            res.render('index.ejs', { teainfo : data })
+            res.render('teas.ejs', { teainfo : data })
         })
         .catch(err => {
             console.error(err)
         })
 })
-
-// app.get('/', (req,res) => {
-//     // res.sendFile(__dirname + '/index.html')
-//     const url = 'https://tea-api-boonaki.herokuapp.com/api/teas'
-//     fetch(url)
-//         .then(res => res.json()) //parse response as json
-//         .then(data => {
-//             console.log(data)
-//             res.render('index.ejs', { teainfo : data })
-//         })
-//         .catch(err => {
-//             console.error(err)
-//         })
-// })
 
 app.listen(PORT, () => {
     console.log('server is running')

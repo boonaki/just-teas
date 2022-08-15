@@ -1,74 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= teainfo.name %></title>
+        <title>TEADB</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/style.css">
-        <link rel="stylesheet" href="/reset.css">
-        <script type="text/javascript" src="/main.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="reset.css">
+        <script type="text/javascript" src="main.js" defer></script>
     </head>
-    <body id="ejsBody">
+
+    <body id="htmlBody">
         <img id="bg" src="/imgs/bg.jpg" alt="bg">
-        <header id="header">
-            <h1>Tea</br>Database</h1>
-            <span><a href="/">return</a></span>
-        </header>
-        <ul id="teas">
-            <% if(!teainfo.types){ %>
-                <% for(key in teainfo) {%>
-                    <% if(key !== 'unknown') {%>
-                        <li class="teaContainer hidden">
-                            <span class="name bold"><%= teainfo[key].name %></span>
-                            <% if(teainfo[key].altnames !== '') {%>
-                                <span class="alt"><span class="bold">Alt: </span><%= teainfo[key].altnames %></span>
-                            <% }else { %>
-                                <span class="alt"><span class="bold">Alt: </span>none</span>
-                            <% } %>
-                            <img src="<%= teainfo[key].image %>" alt="image">
-                            <div class="immediateInfo">
-                                <span><span class="bold">Type: </span><%= teainfo[key].type %></span>
-                                <span><span class="bold">Origin: </span><%= teainfo[key].origin %></span>
-                                <span><span class="bold">Caffeine Levels: </span><%= teainfo[key].caffeineLevel %></span>
-                            </div>
-                            <div class="colorTaste">
-                                <span><span class="bold">Color: </span><%= teainfo[key].colorDescription %></span>
-                                <span><span class="bold">Taste: </span><%= teainfo[key].tasteDescription %></span>
-                            </div>
-                        </li>
-                    <% } %>
+
+        <section id="about">
+            <h1>Looking for tea?</h1>
+            <p>Choose from either 4 of the common base tea's to browse through a collection of their derivatives or browse
+                tea blends</p>
+        </section>
+
+        <section id="typesHeader">
+            <h2>browse the collection . . .</h2>
+        </section>
+
+        <section id="teaTypes">
+            <div id="black" class="buttonDiv">
+                <a href="/black"><span>black</span></a>
+            </div>
+
+            <div id="green" class="buttonDiv">
+                <a href="/green"><span>green</span></a>
+            </div>
+
+            <div id="wulong" class="buttonDiv">
+                <a href="/oolong"><span>wulong (oolong)</span></a>
+            </div>
+
+            <div id="white" class="buttonDiv">
+                <a href="/white"><span>white</span></a>
+            </div>
+
+            <div id="blends" class="buttonDiv">
+                <a href="/blends"><span>blends</span></a>
+            </div>
+        </section>
+
+        <section id="expandedContainer">
+            <% let count = 1 %> 
+            <% for(key in teainfo) {%>
+                <% if(key === 'black' || key === 'green' || key === 'oolong' || key === 'white' || key === 'blends') {%> 
+                    <div class="tea" id="tea-<%= count %>">
+                        <h2 id="teaName"><%= teainfo[key].name %></h2>
+                        <p id="teaDescription"><%= teainfo[key].description %></p>
+                    </div>
                 <% } %>
-            <% }else {%>
-                <% var typesArr = Object.keys(teainfo.types) %>
-                <% for(var i = 0; i < typesArr.length; i++) {%>
-                    <% if(typesArr[i] !== 'unknown') {%>
-                        <li id="container-<%=i%>" class="teaContainer hidden">
-                            <span class="name bold"><%= teainfo.types[typesArr[i]].name %></span>
-                            <% if(teainfo.types[typesArr[i]].altnames !== '') {%>
-                                <span class="alt"><span class="bold">Alt: </span><%= teainfo.types[typesArr[i]].altnames %></span>
-                            <% }else { %>
-                                <span class="alt"><span class="bold">Alt: </span>none</span>
-                            <% } %>
-                            <img src="<%= teainfo.types[typesArr[i]].image %>" alt="image">
-                            <div class="immediateInfo">
-                                <span><span class="bold">Type: </span><%= teainfo.types[typesArr[i]].type %></span>
-                                <span><span class="bold">Origin: </span><%= teainfo.types[typesArr[i]].origin %></span>
-                                <span><span class="bold">Caffeine Levels: </span><%= teainfo.types[typesArr[i]].caffeineLevel %></span>
-                            </div>
-                            <div class="colorTaste">
-                                <span><span class="bold">Color: </span><%= teainfo.types[typesArr[i]].colorDescription %></span>
-                                <span><span class="bold">Taste: </span><%= teainfo.types[typesArr[i]].tasteDescription %></span>
-                            </div>
-                        </li>
-                    <% } %>
-                <% } %>
-            <% } %>
-        </ul>
-        <span id="buttonBack">BACK</span>
-        <span id="buttonNext">NEXT</span>
+                <% count++ %>  
+            <% } %>     
+        </section>
+
+        <footer id="htmlFoot">
+            <a href="https://github.com/boonaki/a-tea-api">view api</a>
+            <a href="https://github.com/boonaki/tea-database">github</a>
+        </footer>
     </body>
+
 </html>
