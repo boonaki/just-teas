@@ -1,4 +1,4 @@
-# just tea 
+# Just Teas Full-stack Web-App
 This fullstack web application pulls data provided from an open-source API I developed, and displays the data dynamically with the EJS templating language based on different button inputs.
 
 **Link to project:** https://just-teas.herokuapp.com/
