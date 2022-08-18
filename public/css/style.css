@@ -145,10 +145,12 @@ h1{
     }
     #teaContainer{
         display: flex;
-        height: 615px;
+        align-items: center;
+        height: 630px;
     }
     #teaTypesContainer{
         width: 50%;
+        height: 100%;
     }
     #expandedContainer{
         width: 50%;
@@ -157,6 +159,11 @@ h1{
     .basictea{
         height: 100%;
         justify-content: center;
+    }
+}
+@media (min-width: 1200px){
+    #about p{
+        margin-bottom: 10px;
     }
 }
 /* #about{
