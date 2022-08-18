@@ -5,64 +5,78 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TEADB</title>
+        <title>just tea &#127861;</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="reset.css">
-        <script type="text/javascript" src="main.js" defer></script>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/reset.css">
+        <script type="text/javascript" src="/scripts/main.js" defer></script>
     </head>
 
-    <body id="htmlBody">
-        <img id="bg" src="/imgs/bg.jpg" alt="bg">
+    <body id="indexBody">
+        <img id="bg" src="/imgs/bg2_lowres.jpg" alt="bg">
 
         <section id="about">
             <h1>Looking for tea?</h1>
-            <p>Choose from either 4 of the common base tea's to browse through a collection of their derivatives or browse
+            <p>Choose from either four of the common base tea's to browse through a collection of their derivatives or browse
                 tea blends</p>
         </section>
+        <section id="teaContainer">
+            <section id="teaTypesContainer">
+                <section id="typesHeader">
+                    <h2>browse the collection . . .</h2>
+                </section>
 
-        <section id="typesHeader">
-            <h2>browse the collection . . .</h2>
-        </section>
-
-        <section id="teaTypes">
-            <div id="black" class="buttonDiv">
-                <a href="/black"><span>black</span></a>
-            </div>
-
-            <div id="green" class="buttonDiv">
-                <a href="/green"><span>green</span></a>
-            </div>
-
-            <div id="wulong" class="buttonDiv">
-                <a href="/oolong"><span>wulong (oolong)</span></a>
-            </div>
-
-            <div id="white" class="buttonDiv">
-                <a href="/white"><span>white</span></a>
-            </div>
-
-            <div id="blends" class="buttonDiv">
-                <a href="/blends"><span>blends</span></a>
-            </div>
-        </section>
-
-        <section id="expandedContainer">
-            <% let count = 1 %> 
-            <% for(key in teainfo) {%>
-                <% if(key === 'black' || key === 'green' || key === 'oolong' || key === 'white' || key === 'blends') {%> 
-                    <div class="tea" id="tea-<%= count %>">
-                        <h2 id="teaName"><%= teainfo[key].name %></h2>
-                        <p id="teaDescription"><%= teainfo[key].description %></p>
+                <section id="teaTypes">
+                    <div id="1" class="buttonDiv" onclick="findTeaDesc(this.id)">
+                        <!-- <a href="/black"><span>black</span></a> -->
+                        <span>black</span>
                     </div>
-                <% } %>
-                <% count++ %>  
-            <% } %>     
-        </section>
 
-        <footer id="htmlFoot">
+                    <div id="2" class="buttonDiv" onclick="findTeaDesc(this.id)">
+                        <!-- <a href="/green"><span>green</span></a> -->
+                        <span>green</span>
+                    </div>
+
+                    <div id="3" class="buttonDiv" onclick="findTeaDesc(this.id)">
+                        <!-- <a href="/oolong"><span>wulong (oolong)</span></a> -->
+                        <span>wulong (oolong)</span>
+                    </div>
+
+                    <div id="4" class="buttonDiv" onclick="findTeaDesc(this.id)">
+                        <!-- <a href="/white"><span>white</span></a> -->
+                        <span>white</span>
+                    </div>
+
+                    <div id="5" class="buttonDiv" onclick="findTeaDesc(this.id)">
+                        <!-- <a href="/blends"><span>blends</span></a> -->
+                        <span>blends</span>
+                    </div>
+                </section>
+            </section>
+
+            <section id="expandedContainer">
+                <% let count = 1 %> 
+                <% for(key in teainfo) {%>
+                    <% if(key === 'black' || key === 'green' || key === 'oolong' || key === 'white') {%> 
+                        <div class="basictea hidden" id="tea-<%= count %>">
+                            <h2 class="teaName"><%= teainfo[key].name %></h2>
+                            <p class="teaDescription"><%= teainfo[key].description %></p>
+                            <span class="tea_link"><a href="/<%= key %>">view <%= teainfo[key].name.toLowerCase() %>'s</a></span>
+                        </div>
+                    <% }else if(key === 'blends') {%>
+                        <div class="basictea" id="tea-<%= count %>">
+                            <h2 class="teaName">Blends</h2>
+                            <p class="teaDescription">Although the basis of all teas come from the Camellia Sinensis plant, creatives from all over the world have infused their cultures into their tea, creating an extensive range of flavors and combinations.</p>
+                            <span class="tea_link"><a href="/blends">view blend's</a></span>
+                        </div>
+                    <% } %> 
+                    <% count++ %>  
+                <% } %>     
+            </section>
+        </section>
+        <footer id="indexFooter">
             <a href="https://github.com/boonaki/a-tea-api">view api</a>
             <a href="https://github.com/boonaki/tea-database">github</a>
         </footer>

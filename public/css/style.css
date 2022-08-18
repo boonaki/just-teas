@@ -1,24 +1,165 @@
+
+/*base box model styling*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
 html{
     font-family: 'Quicksand', 'sans-serif';
     font-size: 62.5%;
 }
 
+a{
+    color: black;
+    text-decoration: none;
+}
+
 #bg{
-    z-index: -1;
+    object-fit: cover;
+    height: 175px;
+    width: 100%;
+    /* z-index: -1;
     min-height: 100%;
     min-width: 1024px;
     width: 100%;
     height: auto;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0; */
 }
 
+#indexBody .hidden{
+    display: none;
+}
+
+
 /******************************************
-/* HTML
+/* INDEX.EJS
 /*******************************************/
+#indexBody{
+    display: flex;
+    flex-direction: column;
+}
 
 #about{
+    height: 145px;
+    width: 100%;
+    padding: 5%;
+    background: #3f3f40;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1{
+    color: #FDBA74;
+    font-size: 3.0rem;
+}
+#about p{
+    color: #F8FAFC;
+    font-size: 1.6rem;
+    margin-top: 5px;
+}
+
+#teaTypesContainer{
+    width: 100%;
+    padding: 5%;
+    background: #27272A;
+}
+#typesHeader{
+    color: #FDBA74;
+    font-size: 2.0rem;
+    margin-bottom: 10px;
+}
+.buttonDiv{
+    padding: 5px 10px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: 2px solid #27272A;
+}
+.buttonDiv:hover{
+    border: 2px solid #FED7AA;
+}
+.buttonDiv span{
+    color: #F8FAFC;
+    font-size: 4.0rem;
+}
+
+.basictea{
+    padding: 5%;
+    background: #FDBA74;
+    display: flex;
+    flex-direction: column;
+}
+.teaName{
+    font-size: 3.5rem;
+}
+.teaDescription{
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+.tea_link{
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background: #27272A;
+}
+.tea_link a{
+    font-size: 2.0rem;
+    color: #FDBA74;
+}
+#indexFooter{
+    background: #3f3f40;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#indexFooter a{
+    font-size: 2.0rem;
+    color: #F8FAFC;
+}
+
+@media (min-width: 600px){
+    html{
+        font-size: 66.5%;
+    }
+}
+
+@media (min-width: 1024px){
+    html{
+        font-size: 70%;
+    }
+    #about p{
+        font-size: 2.2rem;
+        width: 60%;
+    }
+    #teaContainer{
+        display: flex;
+        height: 615px;
+    }
+    #teaTypesContainer{
+        width: 50%;
+    }
+    #expandedContainer{
+        width: 50%;
+        height: 100%;
+    }
+    .basictea{
+        height: 100%;
+        justify-content: center;
+    }
+}
+/* #about{
     box-sizing: border-box;
     width: 100%;
     height: 100px;
@@ -99,13 +240,13 @@ html{
     text-decoration: none;
     color: white;
     font-size: 2.2rem;
-}
+} */
 
 /******************************************
-/* EJS
+/* TEAS.EJS
 /*******************************************/
 
-#ejsBody{
+/* #ejsBody{
     overflow-x: hidden;
 }
 
@@ -157,10 +298,10 @@ html{
     justify-content: center;
     align-items: center;
     background: grey;
-}
+} */
 
 /* newNext box before coming onto page*/
-.newNext{
+/* .newNext{
     transform: translate3d(150%,2%,0px);
     z-index: 0;
     transition: transform .5s linear, opacity .5s linear;
@@ -170,16 +311,16 @@ html{
     will-change: transform;
     filter: blur(4px);
     opacity: 0;
-}
+} */
 
 /* newNext box postion after on page */
-.newNext::after{
+/* .newNext::after{
     transform: translate3d(75%,2%,0px);
     opacity: .5;
-}
+} */
 
 /* og NEXT box positioning */
-.next{
+/* .next{
     transform: translate3d(75%,2%,0px);
     z-index: 1;
     transition: transform .5s linear;
@@ -188,11 +329,11 @@ html{
     -o-transition: transform .5s linear;
     will-change: transform;
     filter: blur(4px);
-    /* opacity: .5; */
-}
+    /* opacity: .5;
+} */
 
 /* oldPrev box after clicking button */
-.oldPrev{
+/* .oldPrev{
     transform: translate3d(-150%,2%,0px);
     transition: transform .5s linear, opacity .5s linear;
     -webkit-transition: transform .5s linear, opacity .5s linear;
@@ -202,16 +343,16 @@ html{
     z-index: 0;
     filter: blur(4px);
     opacity: 0;
-}
+} */
 
 /* positioning before moving */
-.oldPrev::before{
+/* .oldPrev::before{
     transform: translate3d(-75%,2%,0px);
     opacity: .5;
-}
+} */
 
 /* og PREV box positioning */
-.prev{
+/* .prev{
     transform: translate3d(-75%, 2%, 0px);
     transition: transform .5s linear;
     -webkit-transition: transform .5s linear;
@@ -220,24 +361,24 @@ html{
     will-change: transform;
     z-index: 1;
     filter: blur(4px);
-}
+} */
 
 /* current positioning before */
-.current::before{
+/* .current::before{
     transform: translate3d(-75%,2%,0px);
     filter: blur(1px);
-    /* opacity: .8; */
-}
+    /* opacity: .8;
+} */
 
 /* current positioning after */
-.current::after{
+/* .current::after{
     transform: translate3d(75%,2%,0px);
     filter: blur(1px);
-    /* opacity: .8; */
-}
+    /*opacity: .8;
+} */
 
 /* og CURRENT box positioning */
-.current{
+/* .current{
     transform: translate3d(0, 0, 10px);
     transform-style: preserve-3d;
     z-index: 2;
@@ -247,17 +388,17 @@ html{
     -moz-transition: transform .5s linear, filter .5s linear;
     -o-transition: transform .5s linear, filter .5s linear;
     will-change: transform;
-}
+} */
 
 /* IMAGE */
-.teaContainer img{
+/* .teaContainer img{
     max-width: 350px;
     max-height: 350px;
     border: 1px solid black;
-}
+} */
 
 /* TYPE / ORIGIN / CAFF. */
-.immediateInfo{
+/* .immediateInfo{
     width: 100%;
     margin-top: 10px;
     display: flex;
@@ -300,13 +441,13 @@ html{
 
 .hidden{
     display: none;
-}
+} */
 
 /******************************************
 /* RESPONSIVENESS
 /*******************************************/
 
-@media screen and (max-width: 880px){
+/* @media screen and (max-width: 880px){
     html{
         font-size: 57.5%;
     }
@@ -327,7 +468,7 @@ html{
     }
     .teaContainer{
         width: 70%;
-        /* height: 75%; */
+        height: 75%; 
     }
     #about h1{
         margin-bottom: 5px;
@@ -346,4 +487,4 @@ html{
         margin: 5% 10%;
         color: white;
     }   
-}
+} */

@@ -5,9 +5,9 @@
 // let blends = document.querySelector('#blends')
 
 
-let count = 1000
+// let count = 1000
 
-let teaContainers = document.getElementsByClassName('teaContainer')
+// let teaContainers = document.getElementsByClassName('teaContainer')
 
 //RANDOM BACKGROUND COLOR
 //RED GREEN BLUE GOLD BROWNISH
