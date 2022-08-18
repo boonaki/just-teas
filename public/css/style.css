@@ -139,6 +139,10 @@ h1{
     html{
         font-size: 70%;
     }
+    #about{
+        height: none;
+        padding: 30px 5%;
+    }
     #about p{
         font-size: 2.2rem;
         width: 60%;
@@ -161,11 +165,9 @@ h1{
         justify-content: center;
     }
 }
-@media (min-width: 1200px){
-    #about p{
-        margin-bottom: 10px;
-    }
-}
+/* @media (min-width: 1200px){
+    
+} */
 /* #about{
     box-sizing: border-box;
     width: 100%;
