@@ -40,7 +40,7 @@ document.querySelector('#buttonBack').addEventListener('click', _ => {
 
     pageCount--
     if(pageCount === 0){
-        pageCount = 7
+        pageCount = teaContainers.length
     }
     document.getElementById('dataCount').innerText = pageCount
 
