@@ -12,33 +12,42 @@
         <link rel="stylesheet" href="/css/reset.css">
         <script type="text/javascript" src="scripts/teas.js" defer></script>
     </head>
-    <body id="ejsBody">
-        <img id="bg" src="/imgs/bg.jpg" alt="bg">
-        <header id="header">
-            <h1>Tea</br>Database</h1>
-            <span><a href="/">return</a></span>
-        </header>
+    <body id="teasBody">
+        <img id="bg" src="/imgs/bg2_lowres.jpg" alt="bg">
+        <section id="header">
+            <h1><%= teainfo.name ? teainfo.name.split(' ')[0].toLowerCase() + " tea's": "blends" %></h1>
+            <span id="return"><a href="/">return</a></span>
+        </section>
         <ul id="teas">
             <% if(!teainfo.types){ %>
                 <% for(key in teainfo) {%>
                     <% if(key !== 'unknown') {%>
                         <li class="teaContainer hidden">
-                            <span class="name bold"><%= teainfo[key].name %></span>
-                            <% if(teainfo[key].altnames !== '') {%>
-                                <span class="alt"><span class="bold">Alt: </span><%= teainfo[key].altnames %></span>
-                            <% }else { %>
-                                <span class="alt"><span class="bold">Alt: </span>none</span>
-                            <% } %>
-                            <img src="<%= teainfo[key].image %>" alt="image">
+                            <div class="names">
+                                <span class="name bold"><%= teainfo[key].name %></span>
+                                <% if(teainfo[key].altnames !== '') {%>
+                                    <span class="alt"><span class="bold">Alt: </span><%= teainfo[key].altnames %></span>
+                                <% }else { %>
+                                    <span class="alt"><span class="bold">Alt: </span>none</span>
+                                <% } %>
+                            </div>
+                            <img src="<%= teainfo[key].image %>" alt="image" class="tc_image">
                             <div class="immediateInfo">
-                                <span><span class="bold">Type: </span><%= teainfo[key].type %></span>
-                                <span><span class="bold">Origin: </span><%= teainfo[key].origin %></span>
-                                <span><span class="bold">Caffeine Levels: </span><%= teainfo[key].caffeineLevel %></span>
+                                <!-- <span><span class="bold">Type: </span><%# teainfo.types[typesArr[i]].type %></span> -->
+                                <span><%= teainfo[key].origin %></span>
+                                <span><%= teainfo[key].caffeineLevel %> caffeine level</span>
+                                <div class="colorTaste">
+                                    <div class="infoDiv">
+                                        <span class="label">Taste</span>
+                                        <span><%= teainfo[key].tasteDescription %></span>
+                                    </div>
+                                    <div class="infoDiv">
+                                        <span class="label">Color</span>
+                                        <span><%= teainfo[key].colorDescription %></span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="colorTaste">
-                                <span><span class="bold">Color: </span><%= teainfo[key].colorDescription %></span>
-                                <span><span class="bold">Taste: </span><%= teainfo[key].tasteDescription %></span>
-                            </div>
+                            
                         </li>
                     <% } %>
                 <% } %>
@@ -47,28 +56,39 @@
                 <% for(var i = 0; i < typesArr.length; i++) {%>
                     <% if(typesArr[i] !== 'unknown') {%>
                         <li id="container-<%=i%>" class="teaContainer hidden">
-                            <span class="name bold"><%= teainfo.types[typesArr[i]].name %></span>
-                            <% if(teainfo.types[typesArr[i]].altnames !== '') {%>
-                                <span class="alt"><span class="bold">Alt: </span><%= teainfo.types[typesArr[i]].altnames %></span>
-                            <% }else { %>
-                                <span class="alt"><span class="bold">Alt: </span>none</span>
-                            <% } %>
-                            <img src="<%= teainfo.types[typesArr[i]].image %>" alt="image">
-                            <div class="immediateInfo">
-                                <span><span class="bold">Type: </span><%= teainfo.types[typesArr[i]].type %></span>
-                                <span><span class="bold">Origin: </span><%= teainfo.types[typesArr[i]].origin %></span>
-                                <span><span class="bold">Caffeine Levels: </span><%= teainfo.types[typesArr[i]].caffeineLevel %></span>
+                            <div class="names">
+                                <span class="name bold"><%= teainfo.types[typesArr[i]].name %></span>
+                                <% if(teainfo.types[typesArr[i]].altnames !== '') {%>
+                                    <span class="alt"><span class="bold">Alt: </span><%= teainfo.types[typesArr[i]].altnames %></span>
+                                <% }else { %>
+                                    <span class="alt"><span class="bold">Alt: </span>none</span>
+                                <% } %>
                             </div>
-                            <div class="colorTaste">
-                                <span><span class="bold">Color: </span><%= teainfo.types[typesArr[i]].colorDescription %></span>
-                                <span><span class="bold">Taste: </span><%= teainfo.types[typesArr[i]].tasteDescription %></span>
+                            <img src="<%= teainfo.types[typesArr[i]].image %>" alt="image" class="tc_image">
+                            <div class="immediateInfo">
+                                <!-- <span><span class="bold">Type: </span><%# teainfo.types[typesArr[i]].type %></span> -->
+                                <span><%= teainfo.types[typesArr[i]].origin %></span>
+                                <span><%= teainfo.types[typesArr[i]].caffeineLevel %> caffeine level</span>
+                                <div class="colorTaste">
+                                    <div class="infoDiv">
+                                        <span class="label">Taste</span>
+                                        <span><%= teainfo.types[typesArr[i]].tasteDescription %></span>
+                                    </div>
+                                    <div class="infoDiv">
+                                        <span class="label">Color</span>
+                                        <span><%= teainfo.types[typesArr[i]].colorDescription %></span>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     <% } %>
                 <% } %>
             <% } %>
         </ul>
-        <span id="buttonBack">BACK</span>
-        <span id="buttonNext">NEXT</span>
+        <section id="buttons">
+            <span id="buttonBack" class="cont_button">BACK</span>
+            <span id="count"><span id="dataCount">0</span>/<%= teainfo.types ? Object.keys(teainfo.types).length : Object.keys(teainfo).length %></span>
+            <span id="buttonNext" class="cont_button">NEXT</span>
+        </section>
     </body>
 </html>

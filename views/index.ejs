@@ -63,7 +63,7 @@
                         <div class="basictea hidden" id="tea-<%= count %>">
                             <h2 class="teaName"><%= teainfo[key].name %></h2>
                             <p class="teaDescription"><%= teainfo[key].description %></p>
-                            <span class="tea_link"><a href="/<%= key %>">view <%= teainfo[key].name.toLowerCase() %>'s</a></span>
+                            <span class="tea_link"><a href="/<%= key %>">view <%= teainfo[key].name.split(' ')[0].toLowerCase() %> teas</a></span>
                         </div>
                     <% }else if(key === 'blends') {%>
                         <div class="basictea" id="tea-<%= count %>">

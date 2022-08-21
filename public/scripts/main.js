@@ -1,6 +1,3 @@
-
-
-
 function findTeaDesc(id){
     let expandeds = document.getElementsByClassName('basictea')
     for(let i = 0; i < expandeds.length ;i++){

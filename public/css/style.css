@@ -38,18 +38,19 @@ a{
     left: 0; */
 }
 
-#indexBody .hidden{
+#indexBody .hidden, #teasBody .hidden{
     display: none;
 }
 
+#indexBody, #teasBody{
+    display: flex;
+    flex-direction: column;
+    background: #27272A;
+}
 
 /******************************************
 /* INDEX.EJS
 /*******************************************/
-#indexBody{
-    display: flex;
-    flex-direction: column;
-}
 
 #about{
     height: 145px;
@@ -129,13 +130,126 @@ h1{
     color: #F8FAFC;
 }
 
+/******************************************
+/* TEAS.EJS
+/*******************************************/
+
+#header{
+    padding: 5%;
+    background: #3f3f40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#header h1{
+    color: white;
+}
+
+/* .teaContainer{
+    background: #27272A;
+} */
+
+.names{
+    padding: 5% 5% 0 5%;
+    color: #FDBA74;
+}
+
+.name{
+    font-size: 4.8rem;
+    float: left;
+    width: 100%;
+}
+
+.alt{
+    font-size: 1.6rem;
+}
+
+.tc_image{
+    width: 100%;
+    padding: 20px;
+}
+
+.immediateInfo{
+    display: flex;
+    flex-direction: column;
+    color: #27272A;
+    background: #FDBA74;
+    padding-top: 15px;
+}
+.immediateInfo > span{
+    font-size: 2.5rem;
+    padding: 0 5%;
+    font-weight: bold;
+}
+
+.infoDiv{
+    padding: 5%;
+}
+
+.label{
+    float: left;
+    width: 100%;
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #27272A;
+    font-weight: bold;
+}
+.label + span{
+    font-size: 2.0rem;
+}
+#buttons{
+    display: flex;
+    padding: 15px 0;
+    font-size: 2.5rem;
+    justify-content: space-around;
+    background: #3f3f40;
+    color: #FDBA74;
+    align-items: center;
+}
+.cont_button{
+    padding: 10px;
+    background: #27272A;
+    border-radius: 5px;
+}
+#count{
+    color: white;
+}
+
+#return a{
+    background: #27272A;
+    border-radius: 5px;
+    padding: 10px;
+    color: #FDBA74;
+    font-size: 2.0rem;
+}
+
+/******************************************
+/* RESPONSIVENESS
+/*******************************************/
+
 @media (min-width: 600px){
     html{
         font-size: 66.5%;
     }
+    #header{
+        padding: 40px 5%;
+    }
+    .teaContainer{
+
+    }
+}
+
+@media (min-width: 840px){
+    #teas{
+        padding: 0 5% 5% 5%;
+    }
+    .immediateInfo{
+        border-radius: 5px;
+    }
 }
 
 @media (min-width: 1024px){
+    /* index */
     html{
         font-size: 70%;
     }
@@ -164,10 +278,53 @@ h1{
         height: 100%;
         justify-content: center;
     }
+    /* TEAS */
+    #header{
+        justify-content: flex-start;
+    }
+    #header h1{
+        margin-right: 40px;
+        font-size: 3.4rem;
+    }
+    .colorTaste{
+        padding-bottom: 30px;
+    }
+    .label{
+        margin-bottom: 25px;
+    }
+    .infoDiv{
+        padding: 0 50px;
+        margin: 30px 0;
+    }
+
 }
-/* @media (min-width: 1200px){
-    
-} */
+
+@media (min-width: 1300px){
+    #teas{
+        padding: none;
+        width: 50%;
+        margin: 0 25%;
+    }
+    #header{
+        padding: 20px 5%;
+    }
+    #header h1{
+        font-size: 5.5rem;
+        margin-right: 80px;
+    }
+    .names{
+        padding: 5% 0 0 0;
+    }
+    .name{
+        font-size: 5.8rem;
+    }
+    .teaContainer img{
+        padding: 20px 0;
+    }
+    .immediateInfo > span{
+        text-align: center;
+    }
+}
 /* #about{
     box-sizing: border-box;
     width: 100%;
