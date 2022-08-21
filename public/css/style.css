@@ -1,0 +1,485 @@
+
+/*base box model styling*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html{
+    font-family: 'Quicksand', 'sans-serif';
+    font-size: 62.5%;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+#bg{
+    object-fit: cover;
+    height: 175px;
+    width: 100%;
+    /* z-index: -1;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0; */
+}
+
+#indexBody .hidden, #teasBody .hidden{
+    display: none;
+}
+
+#indexBody, #teasBody{
+    display: flex;
+    flex-direction: column;
+    background: #27272A;
+}
+
+/******************************************
+/* INDEX.EJS
+/*******************************************/
+
+#about{
+    height: 145px;
+    width: 100%;
+    padding: 5%;
+    background: #3f3f40;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1{
+    color: #FDBA74;
+    font-size: 3.0rem;
+}
+#about p{
+    color: #F8FAFC;
+    font-size: 1.6rem;
+    margin-top: 5px;
+}
+
+#teaTypesContainer{
+    width: 100%;
+    padding: 5%;
+    background: #27272A;
+}
+#typesHeader{
+    color: #FDBA74;
+    font-size: 2.0rem;
+    margin-bottom: 10px;
+}
+.buttonDiv{
+    padding: 5px 10px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: 2px solid #27272A;
+}
+.buttonDiv:hover{
+    border: 2px solid #FED7AA;
+}
+.buttonDiv span{
+    color: #F8FAFC;
+    font-size: 4.0rem;
+}
+
+.basictea{
+    padding: 5%;
+    background: #FDBA74;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .current > *{
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    transition: transform .5s linear;
+    -webkit-transition: transform .5s linear;
+    -moz-transition: transform .5s linear;
+    -o-transition: transform .5s linear;
+    will-change: transform;
+}
+.current > *::before{
+    transform: translate3d(-100%, 0, 0);
+} */
+.teaName{
+    font-size: 3.5rem;
+}
+.teaDescription{
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+.tea_link{
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background: #27272A;
+}
+.tea_link a{
+    font-size: 2.0rem;
+    color: #FDBA74;
+}
+#indexFooter{
+    background: #3f3f40;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#indexFooter a{
+    font-size: 2.0rem;
+    color: #F8FAFC;
+}
+
+/******************************************
+/* TEAS.EJS
+/*******************************************/
+
+#header{
+    padding: 5%;
+    background: #3f3f40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#header h1{
+    color: white;
+}
+
+#teas{
+    padding: 15px;
+}
+
+.names{
+    padding: 5% 5% 0 5%;
+    color: #FDBA74;
+}
+
+.name{
+    font-size: 4.8rem;
+    float: left;
+    width: 100%;
+}
+
+.alt{
+    font-size: 1.6rem;
+}
+
+.tc_image{
+    width: 100%;
+    padding: 20px 0;
+}
+
+.immediateInfo{
+    display: flex;
+    flex-direction: column;
+    color: #27272A;
+    background: #FDBA74;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+.immediateInfo > span{
+    font-size: 2.5rem;
+    padding: 0 5%;
+    font-weight: bold;
+}
+
+.infoDiv{
+    padding: 5%;
+}
+
+.firstInfo{
+    padding-bottom: 0;
+}
+
+.colorTaste div + div{
+    padding-bottom: 40px;
+}
+
+.label{
+    float: left;
+    width: 100%;
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #27272A;
+    font-weight: bold;
+}
+.label + span{
+    font-size: 2.0rem;
+}
+#buttons{
+    display: flex;
+    padding: 15px 0;
+    font-size: 2.5rem;
+    justify-content: space-around;
+    background: #3f3f40;
+    color: #FDBA74;
+    align-items: center;
+}
+.cont_button{
+    padding: 10px;
+    background: #27272A;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#count{
+    color: white;
+}
+
+#return a{
+    background: #27272A;
+    border-radius: 5px;
+    padding: 10px;
+    color: #FDBA74;
+    font-size: 2.0rem;
+}
+
+/* .current{
+    transform: translateX(0);
+    transition: transform .5s linear;
+    -webkit-transition: transform .5s linear;
+    -moz-transition: transform .5s linear;
+    -o-transition: transform .5s linear;
+    will-change: transform;
+}
+.current::after{
+    transform: translateX(100%);
+}
+.current::before{
+    transform: translateX(-100%);
+}
+
+.next{
+    transform: translateX(100px);
+    transition: transform .5s linear;
+    -webkit-transition: transform .5s linear;
+    -moz-transition: transform .5s linear;
+    -o-transition: transform .5s linear;
+    will-change: transform;
+}
+.next::after{
+    transform: translateX(0);
+}
+
+.prev{
+
+} */
+
+
+
+/******************************************
+/* RESPONSIVENESS
+/*******************************************/
+
+@media (min-width: 600px){
+    html{
+        font-size: 66.5%;
+    }
+    #header{
+        padding: 40px 5%;
+    }
+}
+
+@media (min-width: 840px){
+    #teas{
+        padding: 0 5% 5% 5%;
+    }
+}
+
+@media (min-width: 1024px){
+    /* index */
+    html{
+        font-size: 70%;
+    }
+    #about{
+        height: none;
+        padding: 40px 5%;
+    }
+    #about p{
+        font-size: 2.2rem;
+        width: 60%;
+    }
+    #teaContainer{
+        display: flex;
+        align-items: center;
+        height: 630px;
+    }
+    #teaTypesContainer{
+        width: 50%;
+        height: 100%;
+    }
+    #expandedContainer{
+        width: 50%;
+        height: 100%;
+    }
+    .basictea{
+        height: 100%;
+        justify-content: center;
+    }
+    /* TEAS */
+    #header{
+        justify-content: space-evenly;
+    }
+    #header h1{
+        margin-right: 40px;
+        font-size: 3.4rem;
+    }
+    .colorTaste{
+        padding-bottom: 30px;
+    }
+    .label{
+        margin-bottom: 25px;
+    }
+    .infoDiv{
+        padding: 0 50px;
+        margin: 30px 0;
+    }
+
+}
+
+@media (min-width: 1300px){
+    #teas{
+        padding: none;
+        width: 50%;
+        margin: 0 25%;
+    }
+    #header{
+        padding: 20px 5%;
+    }
+    #header h1{
+        font-size: 5.5rem;
+        margin-right: 80px;
+    }
+    .names{
+        padding: 5% 0 0 0;
+    }
+    .name{
+        font-size: 5.8rem;
+    }
+    .teaContainer img{
+        padding: 20px 0;
+    }
+    .immediateInfo > span{
+        text-align: center;
+    }
+}
+
+
+
+
+
+/**** OLD CODE ****/
+/* .teaContainer{
+    list-style: none;
+    width: 45%;
+    height: 80%;
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: grey;
+}  */
+/* newNext box before coming onto page*/
+/* .newNext{
+    transform: translate3d(150%,2%,0px);
+    z-index: 0;
+    transition: transform .5s linear, opacity .5s linear;
+    -webkit-transition: transform .5s linear, opacity .5s linear;
+    -moz-transition: transform .5s linear, opacity .5s linear;
+    -o-transition: transform .5s linear, opacity .5s linear;
+    will-change: transform;
+    filter: blur(4px);
+    opacity: 0;
+} */
+
+/* newNext box postion after on page */
+/* .newNext::after{
+    transform: translate3d(75%,2%,0px);
+    opacity: .5;
+} */
+
+/* og NEXT box positioning */
+/* .next{
+    transform: translate3d(75%,2%,0px);
+    z-index: 1;
+    transition: transform .5s linear;
+    -webkit-transition: transform .5s linear;
+    -moz-transition: transform .5s linear;
+    -o-transition: transform .5s linear;
+    will-change: transform;
+    filter: blur(4px);
+    /* opacity: .5;
+} */
+
+/* oldPrev box after clicking button */
+/* .oldPrev{
+    transform: translate3d(-150%,2%,0px);
+    transition: transform .5s linear, opacity .5s linear;
+    -webkit-transition: transform .5s linear, opacity .5s linear;
+    -moz-transition: transform .5s linear, opacity .5s linear;
+    -o-transition: transform .5s linear, opacity .5s linear;
+    will-change: transform;
+    z-index: 0;
+    filter: blur(4px);
+    opacity: 0;
+} */
+
+/* positioning before moving */
+/* .oldPrev::before{
+    transform: translate3d(-75%,2%,0px);
+    opacity: .5;
+} */
+
+/* og PREV box positioning */
+/* .prev{
+    transform: translate3d(-75%, 2%, 0px);
+    transition: transform .5s linear;
+    -webkit-transition: transform .5s linear;
+    -moz-transition: transform .5s linear;
+    -o-transition: transform .5s linear;
+    will-change: transform;
+    z-index: 1;
+    filter: blur(4px);
+} */
+
+/* current positioning before */
+/* .current::before{
+    transform: translate3d(-75%,2%,0px);
+    filter: blur(1px);
+    /* opacity: .8;
+} */
+
+/* current positioning after */
+/* .current::after{
+    transform: translate3d(75%,2%,0px);
+    filter: blur(1px);
+    /*opacity: .8;
+} */
+
+/* og CURRENT box positioning */
+/* .current{
+    transform: translate3d(0, 0, 10px);
+    transform-style: preserve-3d;
+    z-index: 2;
+    opacity: 1;
+    transition: transform .5s linear, filter .5s linear;
+    -webkit-transition: transform .5s linear, filter .5s linear;
+    -moz-transition: transform .5s linear, filter .5s linear;
+    -o-transition: transform .5s linear, filter .5s linear;
+    will-change: transform;
+} */
