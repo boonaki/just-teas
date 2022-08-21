@@ -70,7 +70,7 @@
                                 <span><%= teainfo.types[typesArr[i]].origin %></span>
                                 <span><%= teainfo.types[typesArr[i]].caffeineLevel %> caffeine level</span>
                                 <div class="colorTaste">
-                                    <div class="infoDiv">
+                                    <div class="infoDiv firstInfo">
                                         <span class="label">Taste</span>
                                         <span><%= teainfo.types[typesArr[i]].tasteDescription %></span>
                                     </div>
@@ -87,7 +87,7 @@
         </ul>
         <section id="buttons">
             <span id="buttonBack" class="cont_button">BACK</span>
-            <span id="count"><span id="dataCount">0</span>/<%= teainfo.types ? Object.keys(teainfo.types).length : Object.keys(teainfo).length %></span>
+            <span id="count"><span id="dataCount">0</span>/<%= teainfo.types ? Object.keys(teainfo.types).length + 1: Object.keys(teainfo).length + 1 %></span>
             <span id="buttonNext" class="cont_button">NEXT</span>
         </section>
     </body>

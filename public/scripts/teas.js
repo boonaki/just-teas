@@ -5,6 +5,7 @@
 // let blends = document.querySelector('#blends')
 
 let count = 1000
+let pageCount = 1
 
 let teaContainers = document.getElementsByClassName('teaContainer')
 
@@ -32,6 +33,16 @@ document.querySelector('#buttonBack').addEventListener('click', _ => {
 
     next.classList.remove('next')
     next.classList.add('hidden')
+
+    let newPrev = teaContainers[(count - 2) % teaContainers.length]
+    // newPrev.classList.remove('')
+    newPrev.classList.add('prev')
+
+    pageCount--
+    if(pageCount === 0){
+        pageCount = 7
+    }
+    document.getElementById('dataCount').innerText = pageCount
 
     // document.getElementById('dataCount').innerText = teaContainers.indexOf(current)
 
@@ -75,16 +86,22 @@ document.querySelector('#buttonNext').addEventListener('click', _ => {
     next.classList.remove('next')
     next.classList.remove('hidden')
     next.classList.add('current')
-
+    
     prev.classList.remove('previous')
     prev.classList.add('hidden')
-
-    // document.getElementById('dataCount').innerText = teaContainers.indexOf(current)
-
-    /**** OLD ****/
-    // let newNext = teaContainers[(count + 2) % teaContainers.length]
+    
+    let newNext = teaContainers[(count + 2) % teaContainers.length]
     // newNext.classList.remove('hidden')
-    // newNext.classList.add('newNext')
+    newNext.classList.add('next')
+    
+    pageCount++
+    if(pageCount > teaContainers.length + 1){
+        pageCount = 1
+    }
+    document.getElementById('dataCount').innerText = pageCount
+    
+    
+    /**** OLD ****/
     // //click next, remove hidden from new next
     // //give class that moves it
     // //
@@ -116,8 +133,7 @@ getCurrentSlide()
 // getPrevSlide()
 function getCurrentSlide(){
     let current = teaContainers[count % teaContainers.length]
-    // console.log()
-    // document.getElementById('dataCount').innerText = teaContainers.indexOf(current)
+    document.getElementById('dataCount').innerText = pageCount
     current.classList.remove('hidden')
     current.classList.add('current')
 }

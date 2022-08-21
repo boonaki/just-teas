@@ -148,6 +148,9 @@ h1{
 /* .teaContainer{
     background: #27272A;
 } */
+#teas{
+    padding: 15px;
+}
 
 .names{
     padding: 5% 5% 0 5%;
@@ -166,7 +169,7 @@ h1{
 
 .tc_image{
     width: 100%;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .immediateInfo{
@@ -175,6 +178,7 @@ h1{
     color: #27272A;
     background: #FDBA74;
     padding-top: 15px;
+    border-radius: 5px;
 }
 .immediateInfo > span{
     font-size: 2.5rem;
@@ -184,6 +188,14 @@ h1{
 
 .infoDiv{
     padding: 5%;
+}
+
+.firstInfo{
+    padding-bottom: 0;
+}
+
+.colorTaste div + div{
+    padding-bottom: 40px;
 }
 
 .label{
@@ -210,6 +222,7 @@ h1{
     padding: 10px;
     background: #27272A;
     border-radius: 5px;
+    cursor: pointer;
 }
 #count{
     color: white;
@@ -223,13 +236,36 @@ h1{
     font-size: 2.0rem;
 }
 
-.previous{
-
+/* .current{
+    transform: translateX(0);
+    transition: transform .5s linear;
+    -webkit-transition: transform .5s linear;
+    -moz-transition: transform .5s linear;
+    -o-transition: transform .5s linear;
+    will-change: transform;
+}
+.current::after{
+    transform: translateX(100%);
+}
+.current::before{
+    transform: translateX(-100%);
 }
 
 .next{
-    
+    transform: translateX(100px);
+    transition: transform .5s linear;
+    -webkit-transition: transform .5s linear;
+    -moz-transition: transform .5s linear;
+    -o-transition: transform .5s linear;
+    will-change: transform;
 }
+.next::after{
+    transform: translateX(0);
+}
+
+.prev{
+
+} */
 
 
 
@@ -244,17 +280,11 @@ h1{
     #header{
         padding: 40px 5%;
     }
-    .teaContainer{
-
-    }
 }
 
 @media (min-width: 840px){
     #teas{
         padding: 0 5% 5% 5%;
-    }
-    .immediateInfo{
-        border-radius: 5px;
     }
 }
 
@@ -290,7 +320,7 @@ h1{
     }
     /* TEAS */
     #header{
-        justify-content: flex-start;
+        justify-content: space-evenly;
     }
     #header h1{
         margin-right: 40px;
