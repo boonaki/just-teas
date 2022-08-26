@@ -29,27 +29,27 @@
                 </section>
 
                 <section id="teaTypes">
-                    <div id="1" class="buttonDiv" onclick="findTeaDesc(this.id)">
+                    <div id="0" class="buttonDiv" onclick="findTeaDesc(this.id)">
                         <!-- <a href="/black"><span>black</span></a> -->
                         <span>black</span>
                     </div>
 
-                    <div id="2" class="buttonDiv" onclick="findTeaDesc(this.id)">
+                    <div id="1" class="buttonDiv" onclick="findTeaDesc(this.id)">
                         <!-- <a href="/green"><span>green</span></a> -->
                         <span>green</span>
                     </div>
 
-                    <div id="3" class="buttonDiv" onclick="findTeaDesc(this.id)">
+                    <div id="2" class="buttonDiv" onclick="findTeaDesc(this.id)">
                         <!-- <a href="/oolong"><span>wulong (oolong)</span></a> -->
                         <span>wulong (oolong)</span>
                     </div>
 
-                    <div id="4" class="buttonDiv" onclick="findTeaDesc(this.id)">
+                    <div id="3" class="buttonDiv" onclick="findTeaDesc(this.id)">
                         <!-- <a href="/white"><span>white</span></a> -->
                         <span>white</span>
                     </div>
 
-                    <div id="5" class="buttonDiv" onclick="findTeaDesc(this.id)">
+                    <div id="4" class="buttonDiv" onclick="findTeaDesc(this.id)">
                         <!-- <a href="/blends"><span>blends</span></a> -->
                         <span>blends</span>
                     </div>
@@ -57,7 +57,7 @@
             </section>
 
             <section id="expandedContainer">
-                <% let count = 1 %> 
+                <% let count = 0 %> 
                 <% for(key in teainfo) {%>
                     <% if(key === 'black' || key === 'green' || key === 'oolong' || key === 'white') {%> 
                         <div class="basictea hidden" id="tea-<%= count %>">
@@ -71,8 +71,8 @@
                             <p class="teaDescription">Although the basis of all teas come from the Camellia Sinensis plant, creatives from all over the world have infused their cultures into their tea, creating an extensive range of flavors and combinations.</p>
                             <span class="tea_link"><a href="/blends">view blend's</a></span>
                         </div>
-                    <% } %> 
-                    <% count++ %>  
+                    <% } %>
+                    <% count++ %>   
                 <% } %>     
             </section>
         </section>

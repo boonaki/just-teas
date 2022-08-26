@@ -16,7 +16,23 @@ app.get('/', (req,res) => {
     fetch(url)
         .then(res => res.json()) //parse response as json
         .then(data => {
-            res.render('index.ejs', { teainfo : data })
+            let formattedData = {}
+            for(let i = 0; i < data.length; i++){
+                data.forEach((elem) => {
+                    if(elem.slug === 'black' && i === 0){
+                        formattedData.black = elem
+                    }else if(elem.slug === 'green' && i === 1){
+                        formattedData.green = elem
+                    }else if(elem.slug === 'oolong' && i === 2){
+                        formattedData.oolong = elem
+                    }else if(elem.slug === 'white' && i === 3){
+                        formattedData.white = elem
+                    }else if(elem.slug === 'blends' && i === 4){
+                        formattedData.blends = elem
+                    }
+                })
+            }
+            res.render('index.ejs', { teainfo : formattedData })
         })
         .catch(err => {
             console.error(err)
