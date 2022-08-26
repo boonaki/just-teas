@@ -9,7 +9,7 @@ This fullstack web application pulls data provided from an open-source API I dev
 
 **Tech used:** HTML, CSS, JavaScript, EJS, Node, Express
 
-This project is the second half of a larger project surrounding teas. First an API was made to respond with simple information about teas, allowing anyone to use the data that I mnanually collected and formatted. This application takes that information and displays it dynamically with EJS in an easy to see and use layout using a carousel animation that I built using CSS and Javascript.
+This project is the second half of a larger project surrounding teas. First an API was made to respond with simple information about teas, allowing anyone to use the data that is collected and formatted. This application takes that information and displays it dynamically with EJS in an easy to see and use layout using a carousel animation that I built using CSS and Javascript.
 
 **Link to API:** https://github.com/boonaki/boonakis-tea-api
 
