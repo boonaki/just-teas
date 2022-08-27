@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= teainfo.name %></title>
+        <title><%= teainfo[0].name %></title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -15,12 +15,12 @@
     <body id="teasBody">
         <img id="bg" src="/imgs/bg2_lowres.jpg" alt="bg">
         <section id="header">
-            <h1><%= teainfo.name ? teainfo.name.split(' ')[0].toLowerCase() + " tea's": "blends" %></h1>
+            <h1><%= teainfo[0].name ? teainfo[0].name.split(' ')[0].toLowerCase() + " tea's": "blends" %></h1>
             <span id="return"><a href="/">return</a></span>
         </section>
         <ul id="teas">
-            <% console.log(teainfo[0].types) %> 
-            <% if(!teainfo[0].types){ %>
+            <%# console.log(teainfo) %> 
+            <% if(teainfo[0].types){ %>
                 <% for(key in teainfo[0].types) {%>
                     <% if(key !== 'unknown') {%>
                         <li class="teaContainer hidden">
@@ -53,36 +53,42 @@
                     <% } %>
                 <% } %>
             <% }else {%>
-                <% var typesArr = Object.keys(teainfo[0].types) %>
-                <% for(var i = 0; i < typesArr.length; i++) {%>
-                    <% if(typesArr[i] !== 'unknown') {%>
-                        <li id="container-<%=i%>" class="teaContainer hidden">
+                <%# console.log(teainfo) %> 
+                <%# var typesArr = Object.keys(teainfo[0]) %>
+                <%# for(var i = 0; i < typesArr.length; i++) {%>
+                <% let count = 1 %> 
+                <% for(key in teainfo[0]) {%> 
+                    <% console.log(key) %> 
+                    <% if(key !== "slug" || key !== "_id") {%>
+                        <% console.log(teainfo[0][key].name) %> 
+                        <li id="container-<%=count%>" class="teaContainer hidden">
                             <div class="names">
-                                <span class="name bold"><%= teainfo[0].types[typesArr[i]].name %></span>
-                                <% if(teainfo[0].types[typesArr[i]].altnames !== '') {%>
-                                    <span class="alt"><span class="bold">Alt: </span><%= teainfo[0].types[typesArr[i]].altnames %></span>
+                                <span class="name bold"><%= teainfo[0][key].name %></span>
+                                <% if(teainfo[0][key].altnames !== '') {%>
+                                    <span class="alt"><span class="bold">Alt: </span><%= teainfo[0][key].altnames %></span>
                                 <% }else { %>
                                     <span class="alt"><span class="bold">Alt: </span>none</span>
                                 <% } %>
                             </div>
-                            <img src="<%= teainfo[0].types[typesArr[i]].image %>" alt="image" class="tc_image">
+                            <img src="<%= teainfo[0][key].image %>" alt="image" class="tc_image">
                             <div class="immediateInfo">
                                 <!-- <span><span class="bold">Type: </span><%# teainfo.types[typesArr[i]].type %></span> -->
-                                <span><%= teainfo[0].types[typesArr[i]].origin %></span>
-                                <span><%= teainfo[0].types[typesArr[i]].caffeineLevel %> caffeine level</span>
+                                <span><%= teainfo[0][key].origin %></span>
+                                <span><%= teainfo[0][key].caffeineLevel %> caffeine level</span>
                                 <div class="colorTaste">
                                     <div class="infoDiv firstInfo">
                                         <span class="label">Taste</span>
-                                        <span><%= teainfo[0].types[typesArr[i]].tasteDescription %></span>
+                                        <span><%= teainfo[0][key].tasteDescription %></span>
                                     </div>
                                     <div class="infoDiv">
                                         <span class="label">Color</span>
-                                        <span><%= teainfo[0].types[typesArr[i]].colorDescription %></span>
+                                        <span><%= teainfo[0][key].colorDescription %></span>
                                     </div>
                                 </div>
                             </div>
                         </li>
                     <% } %>
+                    <% count++ %> 
                 <% } %>
             <% } %>
         </ul>
