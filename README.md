@@ -1,5 +1,5 @@
 # Just Teas Full-stack Web-App
-This fullstack web application pulls data provided from an open-source API I developed, and displays the data dynamically with the EJS templating language based on different button inputs.
+Looking for tea? Find your next tea to drink with this full-stack web application made with a personally developed Web-API for tea.
 
 **Link to project:** https://just-teas.herokuapp.com/
 
@@ -9,7 +9,9 @@ This fullstack web application pulls data provided from an open-source API I dev
 
 **Tech used:** HTML, CSS, JavaScript, EJS, Node, Express
 
-This project is the second half of a larger project surrounding teas. First an API was made to respond with simple information about teas, allowing anyone to use the data that I mnanually collected and formatted. This application takes that information and displays it dynamically with EJS in an easy to see and use layout using a carousel animation that I built using CSS and Javascript.
+This web application pulls data provided from an open-source API, and displays the data dynamically with the EJS templating language based on different button inputs.
+
+This is the second half of a larger project surrounding teas. First an API was made to respond with simple information about teas, allowing anyone to use the data that is collected and formatted. This application takes that information and displays it dynamically with EJS in an easy to see and use layout using a carousel animation that I built using CSS and Javascript.
 
 **Link to API:** https://github.com/boonaki/boonakis-tea-api
 
