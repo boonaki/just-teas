@@ -4,7 +4,7 @@
 // let white = document.querySelector('#white')
 // let blends = document.querySelector('#blends')
 
-let count = 1000
+//let count = 1000
 let pageCount = 1
 
 let teaContainers = document.getElementsByClassName('teaContainer')
@@ -71,7 +71,7 @@ document.querySelector('#buttonBack').addEventListener('click', _ => {
     //     next.classList.add('hidden')
     // }, 500) 
 
-    count--
+    // count--
 })
 
 // NEXT BUTTON
@@ -124,7 +124,7 @@ document.querySelector('#buttonNext').addEventListener('click', _ => {
     //     prev.classList.add('hidden')
     // }, 500)
     
-    count++
+    // count++
 })
 
 // ON PAGE LOAD, FIND SECS TO DISPLAY
