@@ -1,7 +1,7 @@
 # Just Teas Full-stack Web-App
 Looking for tea? Find your next tea to drink with this full-stack web application made with a personally developed Web-API for tea.
 
-**Link to project:** https://just-teas.herokuapp.com/
+**Link to project:** https://justteas.herokuapp.com/
 
 <!-- ![alt tag](http://placecorgi.com/1200/650) -->
 
