@@ -227,6 +227,12 @@ h1{
     background: #3f3f40;
     color: #FDBA74;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.teaContainer{
+    margin-bottom: 80px;
 }
 .cont_button{
     padding: 10px;
